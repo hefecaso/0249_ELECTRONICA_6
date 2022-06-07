@@ -19,7 +19,7 @@ GPIO.setup(out2,GPIO.OUT)
 GPIO.setup(out3,GPIO.OUT)
 GPIO.setup(out4,GPIO.OUT)
 
-print "First calibrate by giving some +ve and -ve values....."
+print ()"First calibrate by giving some +ve and -ve values.....")
 
 
 try:
@@ -28,7 +28,8 @@ try:
       GPIO.output(out2,GPIO.LOW)
       GPIO.output(out3,GPIO.LOW)
       GPIO.output(out4,GPIO.LOW)
-      x = input()
+      Print(ingrese un valor entre 0 y 4096 para rotar un angulo de 0 a 360)
+      x = int(input())
       if x>0 and x<=4096:
           for y in range(x,0,-1):
               if negative==1:
