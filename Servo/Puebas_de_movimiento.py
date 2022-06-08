@@ -7,4 +7,4 @@ GPIO.setup(servo, GPIO.OUT)
 
 pwm = GPIO.PWM(servo, 50)
 pwm.start(5)
-pwm.ChangeDutyCucle(2)
+pwm.ChangeDutyCycle(2)
