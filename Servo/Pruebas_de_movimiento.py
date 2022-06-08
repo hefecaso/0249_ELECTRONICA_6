@@ -20,7 +20,7 @@ import math
 #//////////////////////////////////////////////////////////////////////
 
 GPIO.setmode(GPIO.BOARD) #utilizar el sistema de numeracion fisica
-GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #configurar el pin 13 como entrada e internamente una resistencia pull down
+GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #configurar el pin 13 como entrada e internamente una resistencia pull down
 
 #//////////////////////////////////////////////////////////////////////
 #/  VARIABLES GLOBALES  ///////////////////////////////////////////////
