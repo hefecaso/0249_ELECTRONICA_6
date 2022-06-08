@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 
 servo = 11
 
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(servo, GPIO.OUT)
 
