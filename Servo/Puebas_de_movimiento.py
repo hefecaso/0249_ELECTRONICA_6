@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
-servo = 111
+servo = 11
 
 GPIO.setmode(GPIO.BOARD)
 
