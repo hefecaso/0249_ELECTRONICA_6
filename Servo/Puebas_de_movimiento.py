@@ -1,13 +1,22 @@
 import RPi.GPIO as GPIO
-from gpiozero import AngularServo
 from time import sleep
 
-servo = AngularServo(11, min_pulse_width=0.0006, max_pulse_width=0.0023)
+servo = 111
 
-while True:
-    servo.angle = 90.0
-    sleep(2)
-    servo.angle = 0
-    sleep(2)
-    servo.angle = -90.0
-    sleep(2)
+GPIO.setmode(GPIO.BOARD)
+
+def main():
+    GPIO.setup(servo, GPIO.OUT)
+    pwm = GPIO.PWM(servo, 50)
+
+    while True:
+        angulo = float(input('Ingrese ángulo: '))
+        if angulo >= 0 and  angulo <= 180:
+            duty = int(12.346*angulo**2 + 7777.8*angulo + 700000)
+            servo.duty_ns(duty)
+
+        else:
+            print("Digite un ángulo entre 0 y 180")
+
+if __name__ == '__main__':
+    main()
