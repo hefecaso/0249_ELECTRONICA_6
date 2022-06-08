@@ -9,7 +9,7 @@ def angle_to_percent (angle) :
     if angle > 180 or angle < 0 :
         return False
 
-    start = 0
+    start = 4
     end = 12.5
     ratio = (end - start)/180 #Calcul ratio from angle to percent
 
@@ -21,23 +21,24 @@ def angle_to_percent (angle) :
 GPIO.setmode(GPIO.BOARD) #Use Board numerotation mode
 GPIO.setwarnings(False) #Disable warnings
 
-#Use pin 12 for PWM signal
+#Use pin 11 for PWM signal
 pwm_gpio = 11
 frequence = 50
 GPIO.setup(pwm_gpio, GPIO.OUT)
 pwm = GPIO.PWM(pwm_gpio, frequence)
 
 #Init at 0°
-pwm.start(angle_to_percent(0))
+angulo = int(input("Ingrese un águlo: "))
+pwm.start(angle_to_percent(angulo))
 time.sleep(1)
 
 #Go at 90°
-pwm.ChangeDutyCycle(angle_to_percent(90))
-time.sleep(1)
+#pwm.ChangeDutyCycle(angle_to_percent(90))
+#time.sleep(1)
 
 #Finish at 180°
-pwm.ChangeDutyCycle(angle_to_percent(180))
-time.sleep(1)
+#pwm.ChangeDutyCycle(angle_to_percent(180))
+#time.sleep(1)
 
 #Close GPIO & cleanup
 pwm.stop()
