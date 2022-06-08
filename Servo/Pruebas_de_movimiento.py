@@ -40,10 +40,10 @@ while True:
     #pwm.stop()
     #GPIO.cleanup()
 
-else:
-    print("Debe de ingresar un ángulo entre 0° y 180°")
-    pwm.start(angle_to_percent(0))
-    pwm.stop()
-    GPIO.cleanup()
+    else:
+        print("Debe de ingresar un ángulo entre 0° y 180°")
+        pwm.start(angle_to_percent(0))
+        pwm.stop()
+        GPIO.cleanup()
 
 #https://raspberrypi-espana.es/servo-frambuesa-pi/
