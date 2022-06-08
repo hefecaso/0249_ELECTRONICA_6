@@ -35,8 +35,8 @@ while True:
 
 
     #Close GPIO & cleanup
-    pwm.stop()
-    GPIO.cleanup()
+    #pwm.stop()
+    #GPIO.cleanup()
 
 else:
     pwm.stop()
