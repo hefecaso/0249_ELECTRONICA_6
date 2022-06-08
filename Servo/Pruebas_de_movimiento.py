@@ -9,7 +9,7 @@ def angle_to_percent (angle) :
     if angle > 180 or angle < 0 :
         return False
 
-    start = 4
+    start = 0
     end = 12.5
     ratio = (end - start)/180 #Calcul ratio from angle to percent
 
