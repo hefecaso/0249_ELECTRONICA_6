@@ -27,21 +27,19 @@ frequence = 50
 GPIO.setup(pwm_gpio, GPIO.OUT)
 pwm = GPIO.PWM(pwm_gpio, frequence)
 
-#Init at 0°
-angulo = int(input("Ingrese un águlo: "))
-pwm.start(angle_to_percent(angulo))
-time.sleep(1)
+while True:
+    #Init at 0°
+    angulo = int(input("Ingrese un águlo: "))
+    pwm.start(angle_to_percent(angulo))
+    time.sleep(1)
 
-Go at 90°
-pwm.ChangeDutyCycle(angle_to_percent(90))
-time.sleep(1)
 
-Finish at 180°
-pwm.ChangeDutyCycle(angle_to_percent(180))
-time.sleep(1)
+    #Close GPIO & cleanup
+    pwm.stop()
+    GPIO.cleanup()
 
-#Close GPIO & cleanup
-pwm.stop()
-GPIO.cleanup()
+else:
+    pwm.stop()
+    GPIO.cleanup()
 
 #https://raspberrypi-espana.es/servo-frambuesa-pi/
