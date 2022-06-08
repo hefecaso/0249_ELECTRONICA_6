@@ -31,7 +31,7 @@ while True:
     #Init at 0°
     angulo = int(input("Ingrese un águlo: "))
 
-    if angulo >=0 and angulo <= 180:
+    if 180 >= angulo >=0:
         pwm.start(angle_to_percent(angulo))
         time.sleep(1)
 
