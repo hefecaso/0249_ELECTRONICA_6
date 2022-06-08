@@ -11,11 +11,14 @@ GPIO.setup(servo, GPIO.OUT)
 pwm = GPIO.PWM(servo, frequence)
 pwm.start(0)
 
+print("90 derecha")
 pwm.ChangeDutyCycle(1.5)
 sleep(3)
 
+print("-90 derecha")
 pwm.ChangeDutyCycle(12.5)
 sleep(3)
 
+print("0")
 pwm.ChangeDutyCycle(0)
 sleep(3)
