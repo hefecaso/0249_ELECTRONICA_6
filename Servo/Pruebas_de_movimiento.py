@@ -21,11 +21,11 @@ INITIAL_PULSE = 1.74
 #Variables
 servo_stopped = True
 #Servos' pins
-S1 = 17
+S1 = 11
 
 # Raspberry Pi GPIO Configuration:
 def setup():
-  GPIO.setmode(GPIO.BCM)
+  GPIO.setmode(GPIO.BOARD)
   GPIO.setup(S1,GPIO.OUT)
 
   GPIO.output(S1, False)
