@@ -42,3 +42,5 @@ time.sleep(1)
 #Close GPIO & cleanup
 pwm.stop()
 GPIO.cleanup()
+
+#https://raspberrypi-espana.es/servo-frambuesa-pi/
