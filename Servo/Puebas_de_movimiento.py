@@ -11,9 +11,10 @@ def main():
 
     while True:
         angulo = float(input('Ingrese ángulo: '))
+
         if angulo >= 0 and  angulo <= 180:
             duty = int(12.346*angulo**2 + 7777.8*angulo + 700000)
-            servo.duty_ns(duty)
+            servo(duty)
 
         else:
             print("Digite un ángulo entre 0 y 180")
