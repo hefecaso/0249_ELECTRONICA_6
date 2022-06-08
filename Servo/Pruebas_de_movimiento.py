@@ -30,8 +30,10 @@ pwm = GPIO.PWM(pwm_gpio, frequence)
 while True:
     #Init at 0°
     angulo = int(input("Ingrese un águlo: "))
-    pwm.start(angle_to_percent(angulo))
-    time.sleep(1)
+
+    if angulo >=0, angulo <= 180:
+        pwm.start(angle_to_percent(angulo))
+        time.sleep(1)
 
 
     #Close GPIO & cleanup
@@ -39,6 +41,8 @@ while True:
     #GPIO.cleanup()
 
 else:
+    print("Debe de ingresar un ángulo entre 0° y 180°")
+    pwm.start(angle_to_percent(0))
     pwm.stop()
     GPIO.cleanup()
 
