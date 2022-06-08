@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-servo = 111
+servo = 11
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setmode(GPIO.OUT)
