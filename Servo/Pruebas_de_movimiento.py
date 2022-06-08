@@ -33,12 +33,12 @@ while True:
 
 
     angulo = int(input("Ingrese un águlo: "))
+    pwm.start(angulo)
+''''
+    if 180 >= angulo >=0:
+        pwm.start(angle_to_percent(angulo))
+        time.sleep(1)
 
-    #if 180 >= angulo >=0:
-    if 2.35 >= angulo >=0.65:
-        #pwm.start(angle_to_percent(angulo))
-        #time.sleep(1)
-        pwm.start(angulo)
 
 
     #Close GPIO & cleanup
@@ -50,5 +50,5 @@ while True:
         pwm.start(angle_to_percent(0))
         #pwm.stop()
         #GPIO.cleanup()
-
+'''
 #https://raspberrypi-espana.es/servo-frambuesa-pi/
