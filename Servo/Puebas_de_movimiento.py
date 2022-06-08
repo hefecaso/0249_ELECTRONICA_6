@@ -6,7 +6,7 @@ import time
 
 #Nompramos el númmero de pin físico
 servoPIN = 11
-
+GPIO.setwarnings(False)
 # Con este vamos a definir por enumeración de GPIO
 #GPIO.setmode(GPIO.BCM)
 
