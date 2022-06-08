@@ -32,7 +32,7 @@ while True:
     #Init at 0°
 
 
-    angulo = int(input("Ingrese un águlo: "))
+    angulo = float(input("Ingrese un águlo: "))
     pwm.start(angulo)
 ''''
     if 180 >= angulo >=0:
