@@ -27,30 +27,22 @@ frequence = 50
 GPIO.setup(servo, GPIO.OUT)
 pwm = GPIO.PWM(servo, frequence)
 
+def angulo_giro(angulo):
+    if angulo > 180 or angulo < 0 :
+        return False    
+    giro = (angulo)/18 +2
+    return giro
+
 #pwm.start(7.5)
 while True:
     #Init at 0°
 
 
     angulo = float(input("Ingrese un águlo: "))
-    pwm.start(angulo)
+    pwm.start(angulo_giro(angulo))
+
+
 ''''
-    if 180 >= angulo >=0:
-        pwm.start(angle_to_percent(angulo))
-        time.sleep(1)
-
-
-
-    #Close GPIO & cleanup
-    #pwm.stop()
-    #GPIO.cleanup()
-
-    else:
-        print("Debe de ingresar un ángulo entre 0° y 180°")
-        pwm.start(angle_to_percent(0))
-        #pwm.stop()
-        #GPIO.cleanup()
-
         7 = 90
         2 = 0
         12 = 180
