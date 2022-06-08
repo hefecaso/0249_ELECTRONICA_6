@@ -1,23 +1,50 @@
+# Importamos librerías de python
 import RPi.GPIO as GPIO
-from time import sleep
 
-servo = 11
+# Pondemos en sleep los pines por un tiempo determinado
+import time
 
+#Nompramos el númmero de pin físico
+servoPIN = 11
+
+# Con este vamos a definir por enumeración de GPIO
+#GPIO.setmode(GPIO.BCM)
+
+# Con este vamos a definir por enmeración física de pines
 GPIO.setmode(GPIO.BOARD)
 
-def main():
-    GPIO.setup(servo, GPIO.OUT)
-    pwm = GPIO.PWM(servo, 50)
+# Indicamos si el servo será de salida o entrada de señal
+GPIO.setup(servoPIN, GPIO.OUT)
 
-    while True:
-        angulo = float(input('Ingrese ángulo: '))
+# Indicamos que el pin servirá como pwm
+p = GPIO.PWM(servoPIN, 50) # GPIO 17 for PWM with 50Hz
 
-        if angulo >= 0 and  angulo <= 180:
-            duty = int(12.346*angulo**2 + 7777.8*angulo + 700000)
-            servo(duty)
+# Inicamos punto de inicio
+p.start(7.5)#2.5
 
-        else:
-            print("Digite un ángulo entre 0 y 180")
+try:
 
-if __name__ == '__main__':
-    main()
+	while True:
+
+		p.ChangeDutyCycle(7.8)
+
+		time.sleep(5)
+
+		p.ChangeDutyCycle(14)
+
+		time.sleep(1)
+
+		break;
+
+except KeyboardInterrupt:
+
+	p.stop()
+
+	#break;
+
+	'''Restablece todos los puertos que haya utilizado
+	en este programa al modo de entrada'''
+
+	GPIO.cleanup()
+
+	#break;
