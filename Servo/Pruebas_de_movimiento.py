@@ -22,10 +22,10 @@ GPIO.setmode(GPIO.BOARD) #Use Board numerotation mode
 GPIO.setwarnings(False) #Disable warnings
 
 #Use pin 11 for PWM signal
-pwm_gpio = 11
+servo = 11
 frequence = 50
-GPIO.setup(pwm_gpio, GPIO.OUT)
-pwm = GPIO.PWM(pwm_gpio, frequence)
+GPIO.setup(servo, GPIO.OUT)
+pwm = GPIO.PWM(servo, frequence)
 
 while True:
     #Init at 0°
