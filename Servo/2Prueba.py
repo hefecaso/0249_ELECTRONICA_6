@@ -13,12 +13,12 @@ pwm.start(0)
 
 print("90 derecha")
 pwm.ChangeDutyCycle(1.5)
-sleep(3)
+sleep(9)
 
 print("-90 derecha")
 pwm.ChangeDutyCycle(12.5)
-sleep(3)
+sleep(1)
 
 print("0")
 pwm.ChangeDutyCycle(0)
-sleep(3)
+sleep(1)
