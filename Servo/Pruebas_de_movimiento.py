@@ -50,5 +50,9 @@ while True:
         pwm.start(angle_to_percent(0))
         #pwm.stop()
         #GPIO.cleanup()
+
+        7 = 90
+        2 = 0
+        12 = 180
 '''
 #https://raspberrypi-espana.es/servo-frambuesa-pi/
