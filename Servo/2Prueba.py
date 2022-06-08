@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import time import sleep
+from time import sleep
 
 GPIO.setmode(GPIO.BOARD) #Use Board numerotation mode
 GPIO.setwarnings(False) #Disable warnings
