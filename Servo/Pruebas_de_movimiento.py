@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-from os import system
+import os
 
 
 GPIO.setmode(GPIO.BOARD) # Use Board numerotation mode
