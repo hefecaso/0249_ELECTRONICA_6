@@ -32,6 +32,7 @@ def servo():
 
     # Iniciando loop
 
+    angulo = float(input("\nIngrese un águlo: "))
     movimiento()
 '''
     while True:
