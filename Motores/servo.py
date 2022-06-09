@@ -3,11 +3,11 @@ import time
 import os
 import stepper
 
-GPIO.setmode(GPIO.BOARD) # Use Board numerotation mode
+GPIO.setmode(GPIO.BCM) # Use Board numerotation mode
 GPIO.setwarnings(False) # Disable warnings
 
 # Use pin 11 for PWM signal
-servo = 11
+servo = 17
 frequence = 50
 GPIO.setup(servo, GPIO.OUT)
 pwm = GPIO.PWM(servo, frequence)
