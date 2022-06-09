@@ -54,7 +54,7 @@ def servo():
                 print("Saliendo al menú principal")
                 break
 
-
+        
 ''''
         DC 7% | neut | 90°
         DC 2% | min  | 0°

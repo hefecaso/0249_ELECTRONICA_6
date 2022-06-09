@@ -179,6 +179,7 @@ def stepper():
                       continue
                   i=i-1
 
+            break
 
     except KeyboardInterrupt:
         GPIO.cleanup()
