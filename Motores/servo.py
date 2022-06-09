@@ -3,62 +3,63 @@ import time
 import os
 import stepper
 
-GPIO.setmode(GPIO.BCM) # Use Board numerotation mode
-GPIO.setwarnings(False) # Disable warnings
+def servo():
+    GPIO.setmode(GPIO.BCM) # Use Board numerotation mode
+    GPIO.setwarnings(False) # Disable warnings
 
-# Use pin 11 for PWM signal
-servo = 17
-frequence = 50
-GPIO.setup(servo, GPIO.OUT)
-pwm = GPIO.PWM(servo, frequence)
+    # Use pin 11 for PWM signal
+    servo = 17
+    frequence = 50
+    GPIO.setup(servo, GPIO.OUT)
+    pwm = GPIO.PWM(servo, frequence)
 
 
-#C onvirtiendo ángulos a ciclos de trabajo
-def angulo_giro(angulo):
-    if angulo > 180 or angulo < 0 :
-        return False
-    giro = (angulo)/18 +2
-    return giro
+    #C onvirtiendo ángulos a ciclos de trabajo
+    def angulo_giro(angulo):
+        if angulo > 180 or angulo < 0 :
+            return False
+        giro = (angulo)/18 +2
+        return giro
 
-# Ingreso del ángulo por el usuario
-def movimiento():
-    pwm.start(angulo_giro(angulo))
+    # Ingreso del ángulo por el usuario
+    def movimiento():
+        pwm.start(angulo_giro(angulo))
 
-# Iniciando pwm en 0
-pwm.start(0)
+    # Iniciando pwm en 0
+    pwm.start(0)
 
-#Limpiando terminal
-os.system ("clear")
+    #Limpiando terminal
+    os.system ("clear")
 
-# Iniciando loop
+    # Iniciando loop
 
-while True:
-    angulo = float(input("\nIngrese un águlo: "))
-    salir = 181
-    if 180 >= angulo >= 0:
-        movimiento()
-
-    else:
-        break
-
-'''
-    elif angulo > 180 and 0 < angulo:
-        print("Debe de ingresar un ángulo entre 180° y 0°")
-        selec = input("Desea regresar al menú principal? Y/N: ")
-
-        if selec == "N":
-            print("Recuerde ingresar un ángulo entre 180° y 0°")
+    while True:
+        angulo = float(input("\nIngrese un águlo: "))
+        salir = 181
+        if 180 >= angulo >= 0:
+            movimiento()
 
         else:
-            #Close GPIO & cleanup
-            print("\nRegresando a punto de origen ángulo 0°")
-            pwm.start(angulo_giro(0))
-            time.sleep(2)
-            pwm.stop()
-            GPIO.cleanup()
-            print("Saliendo al menú principal")
             break
-'''
+
+    '''
+        elif angulo > 180 and 0 < angulo:
+            print("Debe de ingresar un ángulo entre 180° y 0°")
+            selec = input("Desea regresar al menú principal? Y/N: ")
+
+            if selec == "N":
+                print("Recuerde ingresar un ángulo entre 180° y 0°")
+
+            else:
+                #Close GPIO & cleanup
+                print("\nRegresando a punto de origen ángulo 0°")
+                pwm.start(angulo_giro(0))
+                time.sleep(2)
+                pwm.stop()
+                GPIO.cleanup()
+                print("Saliendo al menú principal")
+                break
+    '''
 
 ''''
         DC 7% | neut | 90°
