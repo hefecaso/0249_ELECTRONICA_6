@@ -33,14 +33,12 @@ def servo():
 
     # Iniciando loop
 
-    while True:
-        angulo = float(input("\nIngrese un águlo: "))
-        salir = 181
-        if 180 >= angulo >= 0:
-            movimiento()
+    #while True:
+    angulo = float(input("\nIngrese un águlo: "))
+        #salir = 181
+        #if 180 >= angulo >= 0:
+    movimiento()
 
-        else:
-            break
 
     '''
         elif angulo > 180 and 0 < angulo:
