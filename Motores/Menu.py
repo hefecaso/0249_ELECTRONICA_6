@@ -4,5 +4,5 @@ import os
 import stepper
 import servo
 
-stepper.stepper()
 servo.servo()
+stepper.stepper()
