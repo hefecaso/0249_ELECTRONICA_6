@@ -118,3 +118,6 @@ while True:
                     positive=0
                 negative=1
                 giro_stepper()
+
+except KeyboardInterrupt:
+    GPIO.cleanup()
