@@ -104,7 +104,7 @@ while True:
                     y=y+2
                     negative=0
                 positive=1
-                giro_stepper(x)
+                giro_stepper()
 
         elif x<0 and x>=-4096:
             x=x*-1
@@ -117,4 +117,4 @@ while True:
                     y=y+3
                     positive=0
                 negative=1
-                giro_stepper(x)
+                giro_stepper()
