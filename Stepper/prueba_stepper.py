@@ -22,7 +22,7 @@ GPIO.setup(out4,GPIO.OUT)
 #deg = int(input())
 #def deg-re
 
-def giro_stepper(x):
+def giro_stepper():
     if i==0:
      GPIO.output(out1,GPIO.HIGH)
      GPIO.output(out2,GPIO.LOW)
@@ -84,8 +84,8 @@ def giro_stepper(x):
 
 # Iniciando loop
 
-try:
-    while(1):
+while True:
+    try:
         GPIO.output(out1,GPIO.LOW)
         GPIO.output(out2,GPIO.LOW)
         GPIO.output(out3,GPIO.LOW)
@@ -104,7 +104,6 @@ try:
                     y=y+2
                     negative=0
                 positive=1
-
                 giro_stepper(x)
 
         elif x<0 and x>=-4096:
@@ -118,5 +117,4 @@ try:
                     y=y+3
                     positive=0
                 negative=1
-
                 giro_stepper(x)
