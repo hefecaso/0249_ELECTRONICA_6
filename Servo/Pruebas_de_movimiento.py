@@ -15,7 +15,7 @@ pwm = GPIO.PWM(servo, frequence)
 
 #C onvirtiendo ángulos a ciclos de trabajo
 def angulo_giro(angulo):
-    if angulo > 180 and 0 > angulo :
+    if angulo > 180 or angulo < 0 :
         return False
     giro = (angulo)/18 +2
     return giro
@@ -37,7 +37,7 @@ while True:
     if 180 >= angulo >= 0:
         movimiento()
 
-    elif 0 >= angulo >= 180:
+    elif angulo > 180 and 0 < angulo:
         print("Debe de ingresar un ángulo entre 180° y 0°")
         selec = input("Desea regresar al menú principal? Y/N: ")
 
@@ -53,6 +53,7 @@ while True:
             GPIO.cleanup()
             print("Saliendo al menú principal")
             break
+
 
 ''''
         DC 7% | neut | 90°
