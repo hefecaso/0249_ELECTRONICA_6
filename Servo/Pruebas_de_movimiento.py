@@ -28,7 +28,7 @@ pwm.start(0)
 
 # Iniciando loop
 while True:
-    angulo = float(input("Ingrese un águlo: "))
+    angulo = float(input("\nIngrese un águlo: "))
     salir = 181
     if 180 >= angulo >= 0:
         movimiento()
