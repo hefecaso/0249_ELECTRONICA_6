@@ -38,7 +38,6 @@ def servo():
         if 180 >= angulo >= 0:
             movimiento()
 
-'''
         elif angulo > 180 and 0 < angulo:
             print("Debe de ingresar un ángulo entre 180° y 0°")
             selec = input("Desea regresar al menú principal? Y/N: ")
@@ -55,7 +54,7 @@ def servo():
                 GPIO.cleanup()
                 print("Saliendo al menú principal")
                 break
-'''
+
 
 ''''
         DC 7% | neut | 90°
