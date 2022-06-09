@@ -3,4 +3,4 @@ import time
 import os
 import stepper
 
-stepper.stepper
+stepper.stepper()
