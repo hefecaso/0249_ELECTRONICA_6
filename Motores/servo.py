@@ -64,7 +64,7 @@ def servo():
         DC 2% | min  | 0°
         DC 12%| max  | 180°
 '''
-
+servo()
 #################
 #   Referencias #
 #################
