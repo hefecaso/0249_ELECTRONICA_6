@@ -38,6 +38,10 @@ while True:
     if 180 >= angulo >= 0:
         movimiento()
 
+    else:
+        break
+
+'''
     elif angulo > 180 and 0 < angulo:
         print("Debe de ingresar un ángulo entre 180° y 0°")
         selec = input("Desea regresar al menú principal? Y/N: ")
@@ -54,7 +58,7 @@ while True:
             GPIO.cleanup()
             print("Saliendo al menú principal")
             break
-
+'''
 
 ''''
         DC 7% | neut | 90°
