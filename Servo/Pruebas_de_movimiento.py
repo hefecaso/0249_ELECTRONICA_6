@@ -47,6 +47,7 @@ while True:
         else:
             #Close GPIO & cleanup
             print("\nRegresando a punto de origen ángulo 0°")
+            time.sleep(2)
             pwm.start(angulo_giro(0))
             pwm.stop()
             GPIO.cleanup()
