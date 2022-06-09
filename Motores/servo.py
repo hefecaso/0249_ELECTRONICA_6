@@ -39,6 +39,7 @@ def servo():
         #if 180 >= angulo >= 0:
     movimiento(angulo)
 
+servo()
 
     '''
         elif angulo > 180 and 0 < angulo:

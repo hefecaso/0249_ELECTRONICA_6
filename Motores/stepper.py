@@ -12,18 +12,17 @@ positive=0
 negative=0
 y=0
 
-
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(out1,GPIO.OUT)
-GPIO.setup(out2,GPIO.OUT)
-GPIO.setup(out3,GPIO.OUT)
-GPIO.setup(out4,GPIO.OUT)
-#print("Ingrese el valor de azimut (0-360°)")
-#deg = int(input())
-#def deg-re
-
 def stepper():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(out1,GPIO.OUT)
+    GPIO.setup(out2,GPIO.OUT)
+    GPIO.setup(out3,GPIO.OUT)
+    GPIO.setup(out4,GPIO.OUT)
+    #print("Ingrese el valor de azimut (0-360°)")
+    #deg = int(input())
+    #def deg-re
+
+
     GPIO.output(out1,GPIO.LOW)
     GPIO.output(out2,GPIO.LOW)
     GPIO.output(out3,GPIO.LOW)
@@ -181,4 +180,4 @@ def stepper():
 
 stepper()
 #except KeyboardInterrupt:
-    #GPIO.cleanup()
+#GPIO.cleanup()
