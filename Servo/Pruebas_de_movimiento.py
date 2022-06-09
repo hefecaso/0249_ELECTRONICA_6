@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+from os import system
 
 
 GPIO.setmode(GPIO.BOARD) # Use Board numerotation mode
@@ -25,6 +26,9 @@ def movimiento():
 
 # Iniciando pwm en 0
 pwm.start(0)
+
+#Limpiando terminal
+os.system ("clear")
 
 # Iniciando loop
 while True:
