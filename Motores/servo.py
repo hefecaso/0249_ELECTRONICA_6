@@ -22,7 +22,7 @@ def servo():
         return giro
 
     # Ingreso del ángulo por el usuario
-    def movimiento():
+    def movimiento(angulo):
         pwm.start(angulo_giro(angulo))
 
     # Iniciando pwm en 0
@@ -37,7 +37,7 @@ def servo():
     angulo = float(input("\nIngrese un águlo: "))
         #salir = 181
         #if 180 >= angulo >= 0:
-    movimiento()
+    movimiento(angulo)
 
 
     '''
