@@ -37,7 +37,7 @@ while True:
     if 180 >= angulo >= 0:
         movimiento()
 
-    elif angulo >= 180 and 0 <= angulo:
+    elif 0 >= angulo >= 180:
         print("Debe de ingresar un ángulo entre 180° y 0°")
         selec = input("Desea regresar al menú principal? Y/N: ")
 
