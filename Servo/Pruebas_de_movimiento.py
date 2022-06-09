@@ -15,7 +15,7 @@ pwm = GPIO.PWM(servo, frequence)
 
 #C onvirtiendo ángulos a ciclos de trabajo
 def angulo_giro(angulo):
-    if angulo > 180 or angulo < 0 :
+    if angulo > 180 and angulo < 0 :
         return False
     giro = (angulo)/18 +2
     return giro
