@@ -86,38 +86,37 @@ def giro_stepper(x):
 
 try:
     while(1):
+        GPIO.output(out1,GPIO.LOW)
+        GPIO.output(out2,GPIO.LOW)
+        GPIO.output(out3,GPIO.LOW)
+        GPIO.output(out4,GPIO.LOW)
+        deg = int(input("\ningrese un valor para rotar un angulo de 0 a 360"))
+        x = int(-1*(deg*4096)/(360))
 
-    GPIO.output(out1,GPIO.LOW)
-    GPIO.output(out2,GPIO.LOW)
-    GPIO.output(out3,GPIO.LOW)
-    GPIO.output(out4,GPIO.LOW)
-    deg = int(input("\ningrese un valor para rotar un angulo de 0 a 360"))
-    x = int(-1*(deg*4096)/(360))
+        if x>0 and x<=4096:
+            #x=x*-1
+            for y in range(x,0,-1):
+                if negative==1:
+                    if i==7:
+                        i=0
+                    else:
+                        i=i+1
+                    y=y+2
+                    negative=0
+                positive=1
 
-    if x>0 and x<=4096:
-        #x=x*-1
-        for y in range(x,0,-1):
-            if negative==1:
-                if i==7:
-                    i=0
-                else:
-                    i=i+1
-                y=y+2
-                negative=0
-            positive=1
+                giro_stepper(x)
 
-            giro_stepper(x)
+        elif x<0 and x>=-4096:
+            x=x*-1
+            for y in range(x,0,-1):
+                if positive==1:
+                    if i==0:
+                        i=7
+                    else:
+                        i=i-1
+                    y=y+3
+                    positive=0
+                negative=1
 
-    elif x<0 and x>=-4096:
-        x=x*-1
-        for y in range(x,0,-1):
-            if positive==1:
-                if i==0:
-                    i=7
-                else:
-                    i=i-1
-                y=y+3
-                positive=0
-            negative=1
-
-            giro_stepper(x)
+                giro_stepper(x)
