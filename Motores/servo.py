@@ -31,6 +31,9 @@ def servo():
     os.system ("clear")
 
     # Iniciando loop
+
+movimiento()
+'''
     while True:
         angulo = float(input("\nIngrese un águlo: "))
         salir = 181
@@ -54,7 +57,7 @@ def servo():
                 GPIO.cleanup()
                 print("Saliendo al menú principal")
                 break
-
+'''
 
 ''''
         DC 7% | neut | 90°
