@@ -35,18 +35,23 @@ while True:
 
     elif angulo >= 180 and 0 <= angulo:
         print("Debe de ingresar un ángulo entre 180° y 0°")
+        selec = input("Desea regresar al menú principal? Y/N")
 
-    else:
-        #Close GPIO & cleanup
-        pwm.stop()
-        GPIO.cleanup()
-        break
-        
+        if selec == "Y"
+        ("Recuerde ingresar un ángulo entre 180° y 0°")
+
+        else:
+            #Close GPIO & cleanup
+            pwm.stop()
+            GPIO.cleanup()
+            break
+
 ''''
         DC 7% | neut | 90°
         DC 2% | min  | 0°
         DC 12%| max  | 180°
 '''
+
 #################
 #   Referencias #
 #################
