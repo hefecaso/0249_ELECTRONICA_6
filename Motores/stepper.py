@@ -104,6 +104,7 @@ def stepper():
                       i=0
                       continue
                   i=i+1
+                  break
 
 
           elif x<0 and x>=-4096:
@@ -178,8 +179,7 @@ def stepper():
                       i=7
                       continue
                   i=i-1
-
-        break
+                  break
 
     except KeyboardInterrupt:
         GPIO.cleanup()
