@@ -41,7 +41,7 @@ while True:
         print("Debe de ingresar un ángulo entre 180° y 0°")
         selec = input("Desea regresar al menú principal? Y/N: ")
 
-        if selec == "Y":
+        if selec == "N":
             print("Recuerde ingresar un ángulo entre 180° y 0°")
 
         else:
