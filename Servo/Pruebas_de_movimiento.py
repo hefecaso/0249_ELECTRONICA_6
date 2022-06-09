@@ -35,7 +35,7 @@ while True:
 
     elif angulo >= 180 and 0 <= angulo:
         print("Debe de ingresar un ángulo entre 180° y 0°")
-        selec = input("Desea regresar al menú principal? Y/N")
+        selec = input("Desea regresar al menú principal? Y/N: ")
 
         if selec == "Y":
             print("Recuerde ingresar un ángulo entre 180° y 0°")
