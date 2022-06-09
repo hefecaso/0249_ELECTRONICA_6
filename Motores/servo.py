@@ -37,7 +37,7 @@ def servo():
         salir = 181
         if 180 >= angulo >= 0:
             movimiento()
-            break
+
 
         elif angulo > 180 and 0 < angulo:
             print("Debe de ingresar un ángulo entre 180° y 0°")
