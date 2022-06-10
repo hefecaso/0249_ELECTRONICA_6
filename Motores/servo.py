@@ -23,6 +23,7 @@ def servo():
     # Ingreso del ángulo por el usuario
     def movimiento():
         pwm.start(angulo_giro(angulo))
+        pass
 
     # Iniciando pwm en 0
     pwm.start(0)
@@ -36,7 +37,7 @@ def servo():
         salir = 181
         if 180 >= angulo >= 0:
             movimiento()
-            pass
+            #pass
 
         elif True:
             #print("Debe de ingresar un ángulo entre 180° y 0°")
