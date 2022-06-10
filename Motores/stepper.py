@@ -130,8 +130,9 @@ try:
 
     angulo = float(input("\nIngrese un águlo: "))
     salir = 181
+
     if 180 >= angulo >= 0:
-    movimiento(angulo)
+        movimiento(angulo)
 
 
     elif angulo > 180 and 0 < angulo:
@@ -246,6 +247,6 @@ try:
             GPIO.cleanup()
             print("Saliendo al menú principal")
             break
-            
+
 except KeyboardInterrupt:
     GPIO.cleanup()
