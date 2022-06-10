@@ -128,29 +128,29 @@ try:
                   continue
               i=i+1
 
-    angulo = float(input("\nIngrese un águlo: "))
-    salir = 181
+        angulo = float(input("\nIngrese un águlo: "))
+        salir = 181
 
-    if 180 >= angulo >= 0:
-        movimiento(angulo)
+        if 180 >= angulo >= 0:
+            movimiento(angulo)
 
 
-    elif angulo > 180 and 0 < angulo:
-        print("Debe de ingresar un ángulo entre 180° y 0°")
-        selec = input("Desea regresar al menú principal? Y/N: ")
+        elif angulo > 180 and 0 < angulo:
+            print("Debe de ingresar un ángulo entre 180° y 0°")
+            selec = input("Desea regresar al menú principal? Y/N: ")
 
-        if selec == "N":
-            print("Recuerde ingresar un ángulo entre 180° y 0°")
+            if selec == "N":
+                print("Recuerde ingresar un ángulo entre 180° y 0°")
 
-        else:
-            #Close GPIO & cleanup
-            print("\nRegresando a punto de origen ángulo 0°")
-            pwm.start(angulo_giro(0))
-            time.sleep(2)
-            pwm.stop()
-            GPIO.cleanup()
-            print("Saliendo al menú principal")
-            break
+            else:
+                #Close GPIO & cleanup
+                print("\nRegresando a punto de origen ángulo 0°")
+                pwm.start(angulo_giro(0))
+                time.sleep(2)
+                pwm.stop()
+                GPIO.cleanup()
+                print("Saliendo al menú principal")
+                break
 
       elif x<0 and x>=-4096:
           x=x*-1
@@ -225,28 +225,28 @@ try:
                   continue
               i=i-1
 
-    angulo = float(input("\nIngrese un águlo: "))
-    salir = 181
-    if 180 >= angulo >= 0:
-    movimiento(angulo)
+        angulo = float(input("\nIngrese un águlo: "))
+        salir = 181
+        if 180 >= angulo >= 0:
+        movimiento(angulo)
 
 
-    elif angulo > 180 and 0 < angulo:
-        print("Debe de ingresar un ángulo entre 180° y 0°")
-        selec = input("Desea regresar al menú principal? Y/N: ")
+        elif angulo > 180 and 0 < angulo:
+            print("Debe de ingresar un ángulo entre 180° y 0°")
+            selec = input("Desea regresar al menú principal? Y/N: ")
 
-        if selec == "N":
-            print("Recuerde ingresar un ángulo entre 180° y 0°")
+            if selec == "N":
+                print("Recuerde ingresar un ángulo entre 180° y 0°")
 
-        else:
-            #Close GPIO & cleanup
-            print("\nRegresando a punto de origen ángulo 0°")
-            pwm.start(angulo_giro(0))
-            time.sleep(2)
-            pwm.stop()
-            GPIO.cleanup()
-            print("Saliendo al menú principal")
-            break
+            else:
+                #Close GPIO & cleanup
+                print("\nRegresando a punto de origen ángulo 0°")
+                pwm.start(angulo_giro(0))
+                time.sleep(2)
+                pwm.stop()
+                GPIO.cleanup()
+                print("Saliendo al menú principal")
+                break
 
 except KeyboardInterrupt:
     GPIO.cleanup()
