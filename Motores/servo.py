@@ -1,14 +1,13 @@
 import RPi.GPIO as GPIO
 import time
 import os
-import stepper
 
 def servo():
-    GPIO.setmode(GPIO.BCM) # Use Board numerotation mode
+    GPIO.setmode(GPIO.BOARD) # Use Board numerotation mode
     GPIO.setwarnings(False) # Disable warnings
 
     # Use pin 11 for PWM signal
-    servo = 17
+    servo = 11
     frequence = 50
     GPIO.setup(servo, GPIO.OUT)
     pwm = GPIO.PWM(servo, frequence)
@@ -22,7 +21,7 @@ def servo():
         return giro
 
     # Ingreso del ángulo por el usuario
-    def movimiento(angulo):
+    def movimiento():
         pwm.start(angulo_giro(angulo))
 
     # Iniciando pwm en 0
@@ -32,13 +31,11 @@ def servo():
     os.system ("clear")
 
     # Iniciando loop
-
     while True:
         angulo = float(input("\nIngrese un águlo: "))
         salir = 181
         if 180 >= angulo >= 0:
-        movimiento(angulo)
-
+            movimiento()
 
         elif angulo > 180 and 0 < angulo:
             print("Debe de ingresar un ángulo entre 180° y 0°")
@@ -63,7 +60,7 @@ def servo():
         DC 2% | min  | 0°
         DC 12%| max  | 180°
 '''
-servo()
+
 #################
 #   Referencias #
 #################
