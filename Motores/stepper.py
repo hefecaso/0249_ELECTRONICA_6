@@ -48,15 +48,15 @@ GPIO.setup(out4,GPIO.OUT)
 
 try:
    while(1):
-      GPIO.output(out1,GPIO.LOW)
-      GPIO.output(out2,GPIO.LOW)
-      GPIO.output(out3,GPIO.LOW)
-      GPIO.output(out4,GPIO.LOW)
-      print("ingrese un valor para rotar un angulo de 0 a 360")
-      deg = int(input())
-      angulo = float(input("\nIngrese un águlo: "))
-      x = int(-1*(deg*4096)/(360))
-      if x>0 and x<=4096:
+        GPIO.output(out1,GPIO.LOW)
+        GPIO.output(out2,GPIO.LOW)
+        GPIO.output(out3,GPIO.LOW)
+        GPIO.output(out4,GPIO.LOW)
+        print("ingrese un valor para rotar un angulo de 0 a 360")
+        deg = int(input())
+        angulo = float(input("\nIngrese un águlo: "))
+        x = int(-1*(deg*4096)/(360))
+        if x>0 and x<=4096:
           #x=x*-1
           for y in range(x,0,-1):
               if negative==1:
@@ -150,7 +150,7 @@ try:
                 print("Saliendo al menú principal")
                 break
 
-      elif x<0 and x>=-4096:
+        elif x<0 and x>=-4096:
           x=x*-1
           for y in range(x,0,-1):
               if positive==1:
