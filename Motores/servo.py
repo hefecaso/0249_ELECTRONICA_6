@@ -46,9 +46,9 @@ def servo():
 
             else:
                 #Close GPIO & cleanup
-                print("\nRegresando a punto de origen ángulo 0°")
-                pwm.start(angulo_giro(0))
-                time.sleep(2)
+                #print("\nRegresando a punto de origen ángulo 0°")
+                #pwm.start(angulo_giro(0))
+                #time.sleep(2)
                 pwm.stop()
                 GPIO.cleanup()
                 print("Saliendo al menú principal")
