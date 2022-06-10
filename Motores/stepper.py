@@ -54,6 +54,7 @@ try:
       GPIO.output(out4,GPIO.LOW)
       print("ingrese un valor para rotar un angulo de 0 a 360")
       deg = int(input())
+      angulo = float(input("\nIngrese un águlo: "))
       x = int(-1*(deg*4096)/(360))
       if x>0 and x<=4096:
           #x=x*-1
@@ -128,8 +129,6 @@ try:
                   continue
               i=i+1
 
-        angulo = float(input("\nIngrese un águlo: "))
-        salir = 181
 
         if 180 >= angulo >= 0:
             movimiento(angulo)
@@ -225,11 +224,9 @@ try:
                   continue
               i=i-1
 
-        angulo = float(input("\nIngrese un águlo: "))
-        salir = 181
-        if 180 >= angulo >= 0:
-        movimiento(angulo)
 
+        if 180 >= angulo >= 0:
+            movimiento(angulo)
 
         elif angulo > 180 and 0 < angulo:
             print("Debe de ingresar un ángulo entre 180° y 0°")
