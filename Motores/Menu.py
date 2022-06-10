@@ -6,9 +6,9 @@ import servo
 
 
 def menu():
-    print('\n##########################')
-    print('#    Control de Github   #')
-    print('##########################\n')
+    print('#############################')
+    print('#    Control de la antena   #')
+    print('#############################')
 
     print('======================')
     print('Seleccione una opción')
