@@ -35,12 +35,12 @@ def movimiento():
         pwm.start(angulo_giro(angulo))
         time.sleep(1.5)
 
-    print("Saliendo al menú principal")
-    pwm.stop()
-    GPIO.cleanup()
 
 
 movimiento()
+print("Saliendo al menú principal")
+pwm.stop()
+GPIO.cleanup()
 
 
 ''''
