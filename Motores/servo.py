@@ -37,7 +37,7 @@ if 180 >= angulo >= 0:
     time.sleep(1.5)
 
 else:
-    print("Ángulo fuera de los parámetros permitidos")
+    print("Ángulo fuera de los parámetros permitidos.")
 
 pwm.stop()
 GPIO.cleanup()
