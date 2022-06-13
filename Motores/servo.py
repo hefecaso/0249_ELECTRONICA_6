@@ -40,7 +40,6 @@ else:
     print("\nÁngulo fuera de los parámetros permitidos.")
 
 pwm.stop()
-pwm.start(0)
 GPIO.cleanup()
 
 
