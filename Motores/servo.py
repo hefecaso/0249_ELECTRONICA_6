@@ -18,6 +18,8 @@ def angulo_giro(angulo):
     giro = (angulo)/18 +2
     return giro
 
+def movimiento():
+    pwm.start(angulo_giro(angulo))
 
 # Iniciando pwm en 0
 pwm.start(0)
@@ -27,11 +29,11 @@ os.system ("clear")
 
 # Iniciando loop
 #while True:
+
 angulo = float(input("\nIngrese un águlo: "))
 
-
 if 180 >= angulo >= 0:
-    pwm.start(angulo_giro(angulo))
+    movimiento()
     time.sleep(1.5)
 
 else:
