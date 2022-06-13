@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import os
 #import stepper
-import servo
+#import servo
 
 
 def menu():
@@ -27,7 +27,7 @@ while True:
 
     if opc == '1':
         print('====================================================================')
-        execfile("servo.py")
+        exec(open("servo.py").read())
         print('====================================================================')
 
     elif opc == '2':
