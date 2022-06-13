@@ -26,17 +26,17 @@ pwm.start(0)
 os.system ("clear")
 
 # Iniciando loop
-while True:
-    angulo = float(input("\nIngrese un águlo: "))
+#while True:
+angulo = float(input("\nIngrese un águlo: "))
 
-    if 180 >= angulo >= 0:
-        pwm.start(angulo_giro(angulo))
-        continue
+if 180 >= angulo >= 0:
+    pwm.start(angulo_giro(angulo))
+    continue
 
-    print("Saliendo al menú principal")
-    pwm.stop()
-    GPIO.cleanup()
-    break
+print("Saliendo al menú principal")
+pwm.stop()
+GPIO.cleanup()
+
 
 
 ''''
