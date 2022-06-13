@@ -46,6 +46,10 @@ while True:
             system(f"python3 servo.py")
             exec(open("stepper.py").read())
             GPIO.cleanup()
+            opc2 = input("\nEjecutar otra instrucción? y/n: ")
+
+            if opc2 == "n":
+                break
         print('====================================================================')
 
     elif opc == '4':
