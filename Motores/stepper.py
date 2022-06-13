@@ -177,6 +177,7 @@ try:
                   i=7
                   continue
               i=i-1
+    pass
 
 
 except KeyboardInterrupt:
