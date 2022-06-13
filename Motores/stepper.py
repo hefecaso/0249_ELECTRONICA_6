@@ -68,7 +68,8 @@ try:
             cleanup()
             exit( 1 )
         time.sleep( step_sleep )
-    break
+        break
+
 
 except KeyboardInterrupt:
     cleanup()
