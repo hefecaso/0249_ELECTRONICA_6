@@ -27,6 +27,7 @@ while True:
 
     if opc == '1':
         print('====================================================================')
+        pwm.stop()
         exec(open("servo.py").read())
         GPIO.cleanup()
         print('====================================================================')
@@ -42,6 +43,7 @@ while True:
             #exec(open("servo.py").read())
             #exec(open("stepper.py").read())
             #GPIO.cleanup()
+        pwm.stop()
         exec(open("servo.py").read())
         GPIO.cleanup()
         print('====================================================================')
