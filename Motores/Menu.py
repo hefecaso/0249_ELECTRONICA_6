@@ -27,7 +27,9 @@ while True:
 
     if opc == '1':
         print('====================================================================')
-        servo.servo()
+        angulo = float(input("\nIngrese un águlo: "))
+        servo.movimiento()
+        time.sleep(1.5)
         print('====================================================================')
 
     elif opc == '2':
