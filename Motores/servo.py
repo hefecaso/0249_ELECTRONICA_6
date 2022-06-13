@@ -15,17 +15,14 @@ def servo():
 
     #C onvirtiendo ángulos a ciclos de trabajo
     def angulo_giro(angulo):
-        #if angulo > 180 or angulo < 0 :
-            #return False
+        if angulo > 180 or angulo < 0 :
+            return False
         giro = (angulo)/18 +2
         return giro
 
     # Ingreso del ángulo por el usuario
     def movimiento():
         pwm.start(angulo_giro(angulo))
-        pwm.stop()
-        GPIO.cleanup()
-        print("Saliendo al menú principal")
         pass
 
     # Iniciando pwm en 0
@@ -37,9 +34,13 @@ def servo():
     # Iniciando loop
     while True:
         angulo = float(input("\nIngrese un águlo: "))
+        salir = 181
         if 180 >= angulo >= 0:
             movimiento()
-
+            pwm.stop()
+            GPIO.cleanup()
+            print("Saliendo al menú principal")
+            break
 
 
 ''''
