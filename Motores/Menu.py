@@ -28,6 +28,7 @@ while True:
     if opc == '1':
         print('====================================================================')
         exec(open("servo.py").read())
+        GPIO.cleanup()
         print('====================================================================')
 
     elif opc == '2':
@@ -40,6 +41,7 @@ while True:
         while True:
             exec(open("servo.py").read())
             exec(open("stepper.py").read())
+            GPIO.cleanup()
         print('====================================================================')
 
     elif opc == '4':
