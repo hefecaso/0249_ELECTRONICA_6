@@ -38,10 +38,12 @@ while True:
 
     elif opc == '3':
         print('====================================================================')
-        while True:
-            exec(open("servo.py").read())
-            exec(open("stepper.py").read())
-            GPIO.cleanup()
+        #while True:
+            #exec(open("servo.py").read())
+            #exec(open("stepper.py").read())
+            #GPIO.cleanup()
+        exec(open("servo.py").read())
+        GPIO.cleanup()
         print('====================================================================')
 
     elif opc == '4':
