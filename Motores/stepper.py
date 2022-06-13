@@ -1,79 +1,183 @@
 import RPi.GPIO as GPIO
 import time
 
-in1 = 24
-in2 = 25
-in3 = 8
-in4 = 7
+out1 = 24
+out2 = 25
+out3 = 8
+out4 = 7
 
-# careful lowering this, at some point you run into the mechanical limitation of how quick your motor can move
-step_sleep = 0.002
-print("Ingrese el angulo de azimut (0-360°)")
-deg = int(input())
-step_count = int((deg*4096)/(360)) # 5.625*(1/64) per step, 4096 steps is 360°
-
-direction = False # True for clockwise, False for counter-clockwise
-
-# defining stepper motor sequence (found in documentation http://www.4tronix.co.uk/arduino/Stepper-Motors.php)
-step_sequence = [[1,0,0,1],
-                 [1,0,0,0],
-                 [1,1,0,0],
-                 [0,1,0,0],
-                 [0,1,1,0],
-                 [0,0,1,0],
-                 [0,0,1,1],
-                 [0,0,0,1]]
-
-# setting up
-GPIO.setmode( GPIO.BCM )
-GPIO.setup( in1, GPIO.OUT )
-GPIO.setup( in2, GPIO.OUT )
-GPIO.setup( in3, GPIO.OUT )
-GPIO.setup( in4, GPIO.OUT )
-
-# initializing
-GPIO.output( in1, GPIO.LOW )
-GPIO.output( in2, GPIO.LOW )
-GPIO.output( in3, GPIO.LOW )
-GPIO.output( in4, GPIO.LOW )
+i=0
+positive=0
+negative=0
+y=0
 
 
-motor_pins = [in1,in2,in3,in4]
-motor_step_counter = 0 ;
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(out1,GPIO.OUT)
+GPIO.setup(out2,GPIO.OUT)
+GPIO.setup(out3,GPIO.OUT)
+GPIO.setup(out4,GPIO.OUT)
+#print("Ingrese el valor de azimut (0-360°)")
+#deg = int(input())
+#def deg-re
 
-def cleanup():
-    GPIO.output( in1, GPIO.LOW )
-    GPIO.output( in2, GPIO.LOW )
-    GPIO.output( in3, GPIO.LOW )
-    GPIO.output( in4, GPIO.LOW )
-    GPIO.cleanup()
-
-
-# the meat
 try:
-    i = 0
-    for i in range(step_count):
-        for pin in range(0, len(motor_pins)):
-            GPIO.output( motor_pins[pin], step_sequence[motor_step_counter][pin] )
-            
-        if direction==True:
-            motor_step_counter = (motor_step_counter - 1) % 8
+   while(1):
+      GPIO.output(out1,GPIO.LOW)
+      GPIO.output(out2,GPIO.LOW)
+      GPIO.output(out3,GPIO.LOW)
+      GPIO.output(out4,GPIO.LOW)
+      print("ingrese un valor para rotar un angulo de 0 a 360")
+      deg = int(input())
+      x = int(-1*(deg*4096)/(360))
+      if x>0 and x<=4096:
+          #x=x*-1
+          for y in range(x,0,-1):
+              if negative==1:
+                  if i==7:
+                      i=0
+                  else:
+                      i=i+1
+                  y=y+2
+                  negative=0
+              positive=1
+              #print((x+1)-y)
+              if i==0:
+                  GPIO.output(out1,GPIO.HIGH)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==1:
+                  GPIO.output(out1,GPIO.HIGH)
+                  GPIO.output(out2,GPIO.HIGH)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==2:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.HIGH)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==3:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.HIGH)
+                  GPIO.output(out3,GPIO.HIGH)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==4:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.HIGH)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==5:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.HIGH)
+                  GPIO.output(out4,GPIO.HIGH)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==6:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.HIGH)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==7:
+                  GPIO.output(out1,GPIO.HIGH)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.HIGH)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              if i==7:
+                  i=0
+                  continue
+              i=i+1
 
-        elif direction==False:
-            motor_step_counter = (motor_step_counter + 1) % 8
 
-        else: # defensive programming
-            print( "uh oh... direction should *always* be either True or False" )
-            cleanup()
-            exit( 1 )
-        time.sleep( step_sleep )
-
+      elif x<0 and x>=-4096:
+          x=x*-1
+          for y in range(x,0,-1):
+              if positive==1:
+                  if i==0:
+                      i=7
+                  else:
+                      i=i-1
+                  y=y+3
+                  positive=0
+              negative=1
+              #print((x+1)-y)
+              if i==0:
+                  GPIO.output(out1,GPIO.HIGH)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==1:
+                  GPIO.output(out1,GPIO.HIGH)
+                  GPIO.output(out2,GPIO.HIGH)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==2:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.HIGH)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==3:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.HIGH)
+                  GPIO.output(out3,GPIO.HIGH)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==4:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.HIGH)
+                  GPIO.output(out4,GPIO.LOW)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==5:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.HIGH)
+                  GPIO.output(out4,GPIO.HIGH)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==6:
+                  GPIO.output(out1,GPIO.LOW)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.HIGH)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              elif i==7:
+                  GPIO.output(out1,GPIO.HIGH)
+                  GPIO.output(out2,GPIO.LOW)
+                  GPIO.output(out3,GPIO.LOW)
+                  GPIO.output(out4,GPIO.HIGH)
+                  time.sleep(0.003)
+                  #time.sleep(1)
+              if i==0:
+                  i=7
+                  continue
+              i=i-1
 
 
 except KeyboardInterrupt:
-    cleanup()
-    exit( 1 )
-
-cleanup()
-exit( 0 )
+    GPIO.cleanup()
