@@ -39,7 +39,7 @@ if 180 >= angulo >= 0:
 else:
     print("\nÁngulo fuera de los parámetros permitidos.")
 
-#pwm.stop()
+pwm.stop()
 GPIO.cleanup()
 
 
