@@ -23,7 +23,10 @@ def servo():
     # Ingreso del ángulo por el usuario
     def movimiento():
         pwm.start(angulo_giro(angulo))
-        #pass
+        pwm.stop()
+        GPIO.cleanup()
+        print("Saliendo al menú principal")
+        pass
 
     # Iniciando pwm en 0
     pwm.start(0)
@@ -34,11 +37,9 @@ def servo():
     # Iniciando loop
     while True:
         angulo = float(input("\nIngrese un águlo: "))
-        movimiento()
-        pwm.stop()
-        GPIO.cleanup()
-        print("Saliendo al menú principal")
-        pass
+        if 180 >= angulo >= 0:
+            movimiento()
+
 
 
 ''''
