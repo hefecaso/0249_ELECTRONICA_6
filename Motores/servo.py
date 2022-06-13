@@ -31,13 +31,12 @@ while True:
 
     if 180 >= angulo >= 0:
         pwm.start(angulo_giro(angulo))
-        pwm.stop()
-        GPIO.cleanup()
-        print("Saliendo al menú principal")
-        break
+        continue
 
-    elif angulo > 180 and 0 < angulo:
-        print("\nIngrese un ángulo entre 180° y 190°")
+    print("Saliendo al menú principal")
+    pwm.stop()
+    GPIO.cleanup()
+    break
 
 
 ''''
