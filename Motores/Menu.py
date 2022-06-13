@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import os
 #import stepper
-import servo
+#import servo
 
 
 def menu():
@@ -27,9 +27,9 @@ while True:
 
     if opc == '1':
         print('====================================================================')
-        angulo = float(input("\nIngrese un águlo: "))
-        servo.movimiento()
-        time.sleep(1.5)
+        #angulo = float(input("\nIngrese un águlo: "))
+        #servo.movimiento()
+        #time.sleep(1.5)
         print('====================================================================')
 
     elif opc == '2':
