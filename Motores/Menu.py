@@ -15,9 +15,9 @@ def menu():
     print('Seleccione una opción')
     print('======================\n')
 
-    print("\n1. Servo.")
-    print("2. Stepper.")
-    print("3. Ambos.")
+    print("\n1. Elevación.")
+    print("2. Azimut.")
+    print("3. Azimut y elevación.")
     print("4. Salir.\n")
 
 
