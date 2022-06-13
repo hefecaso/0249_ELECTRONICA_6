@@ -51,3 +51,6 @@ while True:
         menu()
         opc = input("Ingrese una opción: ")
         os.system ("clear")
+
+
+#Chekpoint 13/7/2022
