@@ -21,6 +21,7 @@ def angulo_giro(angulo):
 # Ingreso del ángulo por el usuario
 def movimiento():
     pwm.start(angulo_giro(angulo))
+    continue
 
 # Iniciando pwm en 0
 pwm.start(0)
@@ -34,13 +35,8 @@ while True:
     salir = 181
     if 180 >= angulo >= 0:
         movimiento()
-        continue
 
     elif angulo > 180 and 0 < angulo:
-        print("Debe de ingresar un ángulo entre 180° y 0°")
-        print("\nRegresando a punto de origen ángulo 0°")
-        pwm.start(angulo_giro(0))
-        time.sleep(2)
         pwm.stop()
         GPIO.cleanup()
         print("Saliendo al menú principal")
