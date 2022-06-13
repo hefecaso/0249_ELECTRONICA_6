@@ -37,8 +37,11 @@ while True:
 
     elif opc == '3':
         print('====================================================================')
-        servo.servo()
-        stepper.stepper()
+        while True:
+            if 180 >= angulo >= 0:
+                servo.movimiento()
+                time.sleep(1.5)
+
         print('====================================================================')
 
     elif opc == '4':
