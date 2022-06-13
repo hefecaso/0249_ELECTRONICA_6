@@ -31,7 +31,6 @@ angulo = float(input("\nIngrese un águlo: "))
 
 if 180 >= angulo >= 0:
     pwm.start(angulo_giro(angulo))
-    break
 
 print("Saliendo al menú principal")
 pwm.stop()
