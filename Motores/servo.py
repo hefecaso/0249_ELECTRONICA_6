@@ -27,9 +27,10 @@ os.system ("clear")
 
 # Iniciando loop
 #while True:
-angulo = float(input("\nIngrese un águlo: "))
 
 def movimiento():
+    angulo = float(input("\nIngrese un águlo: "))
+
     if 180 >= angulo >= 0:
         pwm.start(angulo_giro(angulo))
         time.sleep(1.5)
