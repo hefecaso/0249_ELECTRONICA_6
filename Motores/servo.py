@@ -30,14 +30,14 @@ os.system ("clear")
 # Iniciando loop
 #while True:
 
-angulo = float(input("\nIngrese un águlo: "))
+angulo = float(input("Ingrese un águlo: "))
 
 if 180 >= angulo >= 0:
     movimiento()
     time.sleep(1.5)
 
 else:
-    print("\nÁngulo fuera de los parámetros permitidos.")
+    print("\nÁngulo fuera de los parámetros permitidos. \n")
 
 pwm.stop()
 GPIO.cleanup()
@@ -59,3 +59,5 @@ GPIO.cleanup()
 # Referencias importantes
 # Teória y cálculos: https://www.learnrobotics.org/blog/raspberry-pi-servo-motor/?utm_source=youtube&utm_medium=description&utm_campaign=link_in_description_FYb7Pr2XNxE#Step-3-Calculate-duty-cycle-to-degrees-formula-for-the-Servo-Motor
 # Teoría youtube: https://www.youtube.com/watch?v=ddlDgUymbxc&ab_channel=GavenMacDonald
+
+#Chekpoin menú, falta target ISS

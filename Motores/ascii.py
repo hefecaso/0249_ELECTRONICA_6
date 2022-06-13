@@ -21,3 +21,5 @@ two = r'''
 spacer = ' ' * 8  # Space between cards.
 for a, b in zip(ace.splitlines(), two.splitlines()):
     print(f'{a}{spacer}{b}')
+
+#Chekpoin menú, falta target ISS

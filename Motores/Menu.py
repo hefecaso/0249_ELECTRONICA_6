@@ -72,4 +72,4 @@ while True:
         os.system ("clear")
 
 
-#Chekpoint 13/7/2022
+#Chekpoin menú, falta target ISS
