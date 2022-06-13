@@ -56,19 +56,19 @@ try:
     for i in range(step_count):
         for pin in range(0, len(motor_pins)):
             GPIO.output( motor_pins[pin], step_sequence[motor_step_counter][pin] )
-            break
+            
         if direction==True:
             motor_step_counter = (motor_step_counter - 1) % 8
-            break
+
         elif direction==False:
             motor_step_counter = (motor_step_counter + 1) % 8
-            break
+
         else: # defensive programming
             print( "uh oh... direction should *always* be either True or False" )
             cleanup()
             exit( 1 )
         time.sleep( step_sleep )
-        
+
 
 
 except KeyboardInterrupt:
