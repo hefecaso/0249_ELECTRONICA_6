@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import os
+from os import system
 #import stepper
 #import servo
 
