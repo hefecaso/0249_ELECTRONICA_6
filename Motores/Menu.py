@@ -37,6 +37,7 @@ while True:
 
     elif opc == '3':
         print('====================================================================')
+        angulo = float(input("\nIngrese un águlo: "))
         while True:
             if 180 >= angulo >= 0:
                 servo.movimiento()
