@@ -37,9 +37,6 @@ while True:
 
     elif angulo > 180 and 0 < angulo:
         print("Debe de ingresar un ángulo entre 180° y 0°")
-
-    else:
-        #Close GPIO & cleanup
         print("\nRegresando a punto de origen ángulo 0°")
         pwm.start(angulo_giro(0))
         time.sleep(2)
