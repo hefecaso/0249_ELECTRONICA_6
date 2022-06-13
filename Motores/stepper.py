@@ -156,7 +156,7 @@ try:
                     i=7
                     continue
                 i=i-1
-        continue
+        break
 
 except KeyboardInterrupt:
     GPIO.cleanup()
