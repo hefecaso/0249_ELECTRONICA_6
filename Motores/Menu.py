@@ -10,7 +10,7 @@ def menu():
     print('#############################')
     print('#    Control de la antena   #')
     print('#############################')
-
+    exec(open("ascii.py").read())
     print('======================')
     print('Seleccione una opción')
     print('======================\n')
