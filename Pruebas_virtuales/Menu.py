@@ -66,32 +66,8 @@ while True:
     elif opc == '4':
         print('====================================================================')
         system("gnome-terminal -- python ISS_Tracker.py")
-
-        screen = turtle.Screen()
-        screen.title("ISS TRACKER")
-        screen.setup(720,360)
-        screen.setworldcoordinates(-180,-90,180,90)
-        screen.bgpic("world.png")
-        screen.register_shape("iss.gif")
-
-        iss = turtle.Turtle()
-        iss.shape("iss.gif")
-        iss.penup()
-
-        def tracker():
-            while True:
-                try:
-                    location = ISS_Info.iss_current_loc()
-                    lat = location['iss_position']['latitude']
-                    lon = location['iss_position']['longitude']
-                    movimiento(lat)
-                except Exception as e:
-                    print(str(e))
-                    break
-
-        t = threading.Thread(target=tracker())
-        t.start()
-
+        angulo = input(input("Ingrese un ángulo: "))
+        movimiento(angulo)
         print('====================================================================')
 
     elif opc == '5':
