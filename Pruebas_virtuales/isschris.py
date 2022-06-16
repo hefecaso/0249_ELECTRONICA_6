@@ -2,11 +2,11 @@ import ISS_Info
 import turtle
 import time
 import threading
-from mpl_toolkits.basemap import Basemap
+#from mpl_toolkits.basemap import Basemap
 #librerias predicciones
 import urllib.request as url
 import json
-import folium
+#import folium
 from datetime import datetime, timezone
 
 screen = turtle.Screen()
@@ -15,10 +15,14 @@ screen.setup(720,360)
 screen.setworldcoordinates(-180,-90,180,90)
 screen.bgpic("world.png")
 screen.register_shape("iss.gif")
-
+#screen.register_shape("gt.gif")
 iss = turtle.Turtle()
 iss.shape("iss.gif")
 iss.penup()
+
+gt = turtle.Turtle()
+#gt.shape("gt.gif")
+gt.penup()
 
 # Latitud y Logitud de Guatemala
 latitud=15.783471
@@ -51,6 +55,8 @@ def tracker():
             iss.goto(float(lon),float(lat))
             iss.pencolor("red")
             iss.dot(iss.goto(float(lon),float(lat)))
+            iss.pencolor("blue")
+            gt.dot(gt.goto(float(longitud),float(latitud)))
             time.sleep(5)
         except Exception as e:
             print(str(e))
