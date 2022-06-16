@@ -2,11 +2,16 @@ import ISS_Info
 import turtle
 import time
 import threading
+
 #from mpl_toolkits.basemap import Basemap
 #librerias predicciones
 import urllib.request as url
 import json
 #import folium
+
+import urllib.request as url
+import json
+
 from datetime import datetime, timezone
 
 screen = turtle.Screen()
@@ -55,7 +60,7 @@ def tracker():
             iss.goto(float(lon),float(lat))
             iss.pencolor("red")
             iss.dot(iss.goto(float(lon),float(lat)))
-            iss.pencolor("blue")
+            gt.pencolor("orange")
             gt.dot(gt.goto(float(longitud),float(latitud)))
             time.sleep(5)
         except Exception as e:
