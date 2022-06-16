@@ -5,9 +5,17 @@ from os import system
 #import stepper
 import Servo_target_virtual as stv
 
-import platform
-import subprocess
+import ISS_Info
+import turtle
+import time
+import threading
 
+def angulo_giro(angulo):
+    giro = (angulo)/18 +2
+    return giro
+
+def movimiento(angulo):
+    print(f"girando {angulo_giro(angulo)}")
 
 def menu():
     print('#############################')
@@ -58,8 +66,32 @@ while True:
     elif opc == '4':
         print('====================================================================')
         system("gnome-terminal -- python ISS_Tracker.py")
-        angulo = int(input("Ingrese valor: "))
-        stv.movimiento(angulo)
+
+        screen = turtle.Screen()
+        screen.title("ISS TRACKER")
+        screen.setup(720,360)
+        screen.setworldcoordinates(-180,-90,180,90)
+        screen.bgpic("world.png")
+        screen.register_shape("iss.gif")
+
+        iss = turtle.Turtle()
+        iss.shape("iss.gif")
+        iss.penup()
+
+        def tracker():
+            while True:
+                try:
+                    location = ISS_Info.iss_current_loc()
+                    lat = location['iss_position']['latitude']
+                    lon = location['iss_position']['longitude']
+                    movimiento(lat)
+                except Exception as e:
+                    print(str(e))
+                    break
+
+        t = threading.Thread(target=tracker())
+        t.start()
+
         print('====================================================================')
 
     elif opc == '5':
