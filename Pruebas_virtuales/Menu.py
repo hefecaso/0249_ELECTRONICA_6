@@ -65,7 +65,7 @@ while True:
 
     elif opc == '4':
         print('====================================================================')
-        system("gnome-terminal -- python ISS_Tracker.py")
+        system("gnome-terminal -- python isschris.py")
         angulo = input(input("Ingrese un ángulo: "))
         movimiento(angulo)
         print('====================================================================')
