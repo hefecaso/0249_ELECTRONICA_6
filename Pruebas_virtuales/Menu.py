@@ -73,7 +73,7 @@ while True:
 
     elif opc == '4':
         print('====================================================================')
-        system("lxterminal -- python isschris.py")
+        system("lxterminal -e python3 isschris.py")
         cuenta = contador()
         for i in range(1000):
            print(f"Azimut {next(cuenta)}° | Elevación {next(cuenta)}°")
