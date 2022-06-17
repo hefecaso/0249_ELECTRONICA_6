@@ -17,6 +17,12 @@ def angulo_giro(angulo):
 def movimiento(angulo):
     print(f"girando {angulo_giro(angulo)}")
 
+def contador():
+  numero = 0
+  while True:
+    numero += 1
+    yield numero
+
 def menu():
     print('#############################')
     print('#    Control de la antena   #')
@@ -66,8 +72,12 @@ while True:
     elif opc == '4':
         print('====================================================================')
         system("gnome-terminal -- python isschris.py")
-        angulo = input(input("Ingrese un ángulo: "))
-        movimiento(angulo)
+        cuenta = contador()
+        for i in range(1000):
+           print(f"Azimut {next(cuenta)}° | Elevación {next(cuenta)}°")
+           time.sleep(2)
+        #angulo = input(input("Ingrese un ángulo: "))
+        #movimiento(angulo)
         print('====================================================================')
 
     elif opc == '5':
