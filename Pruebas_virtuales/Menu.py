@@ -10,6 +10,8 @@ import turtle
 import time
 import threading
 
+
+
 def angulo_giro(angulo):
     giro = (angulo)/18 +2
     return giro
@@ -71,7 +73,7 @@ while True:
 
     elif opc == '4':
         print('====================================================================')
-        system("gnome-terminal -- python isschris.py")
+        system("lxterminal -- python isschris.py")
         cuenta = contador()
         for i in range(1000):
            print(f"Azimut {next(cuenta)}° | Elevación {next(cuenta)}°")
