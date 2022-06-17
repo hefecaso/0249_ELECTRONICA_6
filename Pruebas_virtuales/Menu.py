@@ -10,11 +10,7 @@ import turtle
 import time
 import threading
 
-def contador():
-  numero = 0
-  while True:
-    numero += 1
-    yield numero
+
 
 def angulo_giro(angulo):
     giro = (angulo)/18 +2
@@ -22,6 +18,12 @@ def angulo_giro(angulo):
 
 def movimiento(angulo):
     print(f"girando {angulo_giro(angulo)}")
+
+def contador():
+  numero = 0
+  while True:
+    numero += 1
+    yield numero
 
 def menu():
     print('#############################')
@@ -71,21 +73,14 @@ while True:
 
     elif opc == '4':
         print('====================================================================')
-        ejecutar = input("1. Ejecutar por ssh\n2. Ejecutar desde raspbian\n Opción: ")
-
-        if ejecutar == '1':
-            system("lxterminal -e python3 isschris.py")
-            system("lxterminal -e python3 Motores_tracker_ssh.py")
-
-        elif ejecutar == "2":
-            system("lxterminal -e python3 isschris.py")
-
-            cuenta = contador()
-
-            for i in range(1000):
-               print(f"Azimut {next(cuenta)}° | Elevación {next(cuenta)}°")
-               time.sleep(2)
-
+        system("lxterminal -e python3 isschris.py")
+        
+        cuenta = contador()
+        for i in range(1000):
+           print(f"Azimut {next(cuenta)}° | Elevación {next(cuenta)}°")
+           time.sleep(2)
+        #angulo = input(input("Ingrese un ángulo: "))
+        #movimiento(angulo)
         print('====================================================================')
 
     elif opc == '5':
