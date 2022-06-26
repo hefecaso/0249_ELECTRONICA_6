@@ -4,8 +4,8 @@ from skyfield.api import load, Topos, EarthSatellite
 
 TLE_FILE = "https://celestrak.com/NORAD/elements/active.txt"
 ISS_NAME = "ISS (ZARYA)"
-LONGITUDE = -90.230759
-LATITUDE = 15.783471
+LONGITUDE = -90.5167
+LATITUDE = 14.5833
 
 class SatelliteObserver:
 

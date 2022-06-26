@@ -11,7 +11,7 @@ import json
 
 import urllib.request as url
 import json
-
+import ephem
 from datetime import datetime, timezone
 
 screen = turtle.Screen()
@@ -62,11 +62,22 @@ def tracker():
             iss.dot(iss.goto(float(lon),float(lat)))
             gt.pencolor("orange")
             gt.dot(gt.goto(float(longitud),float(latitud)))
+            degrees_per_radian = 180.0 / math.pi
+            home = ephem.Observer()
+            home.lon = '-90.51327'
+            home.lat = '14.64072'
+            home.elevation = 1729
+            iss_1 = ephem.readtle('ISS',
+                '1 25544U 98067A   22162.52439360  .00005833  00000+0  11028-3 0  9998',
+                '2 25544  51.6455   4.6361 0004468 222.6641 220.6469 15.49954017344301'
+            )
+            home.date = datetime.utcnow()
+            iss_1.compute(home)
+            Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
+            Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
+            print('Elevacion:', Angulo_Elevacion ,', Azimut:', Azimut)
             time.sleep(5)
-            print(float(lon),float(lat))
-            az=float(math.tan((float(lat)/float(lon))))
-            ro=float(math.sqrt((float(lat)**2)+((400000)**2)+((float(lon)))**2))
-            print(ro,az)
+
         except Exception as e:
             print(str(e))
             break
