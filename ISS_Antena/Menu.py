@@ -164,7 +164,7 @@ while True:
             Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
             #Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
             Azimut =  int(iss_1.az * degrees_per_radian)
-            
+
             GPIO.output(out1,GPIO.LOW)
             GPIO.output(out2,GPIO.LOW)
             GPIO.output(out3,GPIO.LOW)
@@ -303,7 +303,7 @@ while True:
                         continue
                     i=i-1
 
-            angulo = elevacion
+            angulo = Angulo_Elevacion
             movimiento()
             time.sleep(1.5)
 
