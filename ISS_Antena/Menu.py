@@ -5,6 +5,8 @@ from os import system
 #import stepper
 #import servo
 
+import ISS_Info
+
 #################################
 #   Agregando librerías motores #
 #################################
