@@ -44,12 +44,12 @@ pwm = GPIO.PWM(servo, frequence)
 
 
 #C onvirtiendo ángulos a ciclos de trabajo
-def angulo_giro(Angulo_Elevacion):
-    giro = (Angulo_Elevacion)/18 +2
+def angulo_giro(angulo):
+    giro = (angulo)/18 +2
     return giro
 
 def movimiento():
-    pwm.start(angulo_giro(Angulo_Elevacion))
+    pwm.start(angulo_giro(angulo))
 
 #############################################################
 #   Agregando librerías y funciones de pruebas virtuales    #
@@ -161,7 +161,7 @@ while True:
             )
             home.date = datetime.utcnow()
             iss_1.compute(home)
-            Angulo_Elevacion = int(iss_1.alt * degrees_per_radian)
+            Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
             #Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
             Azimut =  int(iss_1.az * degrees_per_radian)
 
@@ -304,7 +304,7 @@ while True:
                     i=i-1
 
             angulo = Angulo_Elevacion
-            pwm.start(angulo)
+            movimiento()
             time.sleep(1.5)
 
         print('====================================================================')
