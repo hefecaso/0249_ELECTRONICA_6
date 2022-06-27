@@ -304,7 +304,7 @@ while True:
                     i=i-1
 
             angulo = Angulo_Elevacion
-            movimiento()
+            pwm.start(angulo)
             time.sleep(1.5)
 
         print('====================================================================')
