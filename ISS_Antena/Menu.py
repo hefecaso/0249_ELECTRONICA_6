@@ -147,6 +147,24 @@ while True:
         #while True:
 
         while True:
+            location = ISS_Info.iss_current_loc()
+            lat = location['iss_position']['latitude']
+            lon = location['iss_position']['longitude']
+            degrees_per_radian = 180.0 / math.pi
+            home = ephem.Observer()
+            home.lon = '-90.51327'
+            home.lat = '14.64072'
+            home.elevation = 1729
+            iss_1 = ephem.readtle('ISS',
+                '1 25544U 98067A   22162.52439360  .00005833  00000+0  11028-3 0  9998',
+                '2 25544  51.6455   4.6361 0004468 222.6641 220.6469 15.49954017344301'
+            )
+            home.date = datetime.utcnow()
+            iss_1.compute(home)
+            Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
+            #Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
+            Azimut =  int(iss_1.az * degrees_per_radian)
+            
             GPIO.output(out1,GPIO.LOW)
             GPIO.output(out2,GPIO.LOW)
             GPIO.output(out3,GPIO.LOW)
