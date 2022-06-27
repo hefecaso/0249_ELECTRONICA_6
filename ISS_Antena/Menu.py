@@ -161,7 +161,7 @@ while True:
             )
             home.date = datetime.utcnow()
             iss_1.compute(home)
-            Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
+            Angulo_Elevacion = int(iss_1.alt * degrees_per_radian)
             #Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
             Azimut =  int(iss_1.az * degrees_per_radian)
 
