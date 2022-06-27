@@ -1,5 +1,10 @@
 import RPi.GPIO as GPIO
 import time
+import math
+import ephem
+from datetime import datetime, timezone
+
+
 
 out1 = 24
 out2 = 25
@@ -23,8 +28,25 @@ try:
         GPIO.output(out2,GPIO.LOW)
         GPIO.output(out3,GPIO.LOW)
         GPIO.output(out4,GPIO.LOW)
+        degrees_per_radian = 180.0 / math.pi
+        home = ephem.Observer()
+        home.lon = '-90.51327'
+        home.lat = '14.64072'
+        home.elevation = 1729
+        iss_1 = ephem.readtle('ISS',
+            '1 25544U 98067A   22162.52439360  .00005833  00000+0  11028-3 0  9998',
+            '2 25544  51.6455   4.6361 0004468 222.6641 220.6469 15.49954017344301'
+        )
+        home.date = datetime.utcnow()
+        iss_1.compute(home)
+        #Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
+        Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
+        print('Elevacion:', Angulo_Elevacion ,', Azimut:', Azimut)
+        time.sleep(5)
+        deg = Azimut
         print("ingrese un valor para rotar un angulo de 0 a 360")
-        deg = int(input())
+
+        #deg = int(input())
         x = int(-1*(deg*4096)/(360))
         if x>0 and x<=4096:
             for y in range(x,0,-1):
