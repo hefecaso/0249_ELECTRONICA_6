@@ -152,7 +152,7 @@ while True:
             GPIO.output(out4,GPIO.LOW)
             #print("ingrese un valor para rotar un angulo de 0 a 360")
             deg = Azimut
-            x = float(-1*(deg*4096)/(360))
+            x = (-1*(deg*4096)/(360))
             if x>0 and x<=4096:
                 for y in range(x,0,-1):
                     if negative==1:
