@@ -45,7 +45,7 @@ try:
         print('Azimut:', Azimut)
         time.sleep(5)
         deg = Azimut
-        print("ingrese un valor para rotar un angulo de 0 a 360")
+        #print("ingrese un valor para rotar un angulo de 0 a 360")
 
         #deg = int(input())
         x = int(-1*(deg*4096)/(360))
@@ -180,6 +180,7 @@ try:
                     continue
                 i=i-1
         break
+
 
 except KeyboardInterrupt:
     GPIO.cleanup()
