@@ -45,7 +45,7 @@ pwm = GPIO.PWM(servo, frequence)
 
 #C onvirtiendo ángulos a ciclos de trabajo
 def angulo_giro(angulo):
-    giro = int(angulo)/18 +2
+    giro = float(angulo)/18 +2
     return giro
 
 def movimiento():
@@ -75,14 +75,15 @@ iss_1 = ephem.readtle('ISS',
 )
 home.date = datetime.utcnow()
 iss_1.compute(home)
-Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
+Angulo_Elevacion = int(iss_1.alt * degrees_per_radian)
+#Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
 #Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
 Azimut =  int(iss_1.az * degrees_per_radian)
 
 
 
 def angulo_giro(angulo):
-    giro = (angulo)/18 +2
+    giro = float(angulo)/18 +2
     return giro
 
 ####################################################
