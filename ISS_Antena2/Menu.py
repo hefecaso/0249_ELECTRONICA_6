@@ -60,7 +60,7 @@ import math
 from datetime import datetime, timezone
 
 #   **Configuración de azimut y elevación**   #
-
+'''
 location = ISS_Info.iss_current_loc()
 lat = location['iss_position']['latitude']
 lon = location['iss_position']['longitude']
@@ -79,7 +79,7 @@ iss_1.compute(home)
 #Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
 #Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
 #Azimut =  int(iss_1.az * degrees_per_radian)
-
+'''
 
 
 def angulo_giro(angulo):
@@ -125,8 +125,8 @@ while True:
         print('====================================================================')
         while True:
             #exec(open("servo.py").read())
-            system(f"python3 servo.py")
-            exec(open("stepper.py").read())
+            system(f"python3 servotarget.py")
+            exec(open("steppertarget.py").read())
             GPIO.cleanup()
             opc2 = input("\nEjecutar otra instrucción? y/n: ")
 
