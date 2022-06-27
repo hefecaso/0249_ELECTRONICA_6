@@ -136,9 +136,9 @@ while True:
 
     elif opc == '4':
         print('====================================================================')
-        
+
         #Limpiando terminal
-        os.system ("clear")
+        #os.system ("clear")
 
         system("lxterminal -e python3 isschris.py")
 
