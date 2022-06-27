@@ -136,13 +136,14 @@ while True:
 
     elif opc == '4':
         print('====================================================================')
+        
+        #Limpiando terminal
+        os.system ("clear")
+
         system("lxterminal -e python3 isschris.py")
 
         # Iniciando pwm en 0
         pwm.start(0)
-
-        #Limpiando terminal
-        os.system ("clear")
 
         # Iniciando loop
         #while True:
