@@ -76,7 +76,8 @@ iss_1 = ephem.readtle('ISS',
 home.date = datetime.utcnow()
 iss_1.compute(home)
 Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
-Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
+#Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
+Azimut =  int(iss_1.az * degrees_per_radian)
 
 
 
@@ -151,8 +152,8 @@ while True:
             GPIO.output(out3,GPIO.LOW)
             GPIO.output(out4,GPIO.LOW)
             #print("ingrese un valor para rotar un angulo de 0 a 360")
-            deg = float(Azimut)
-            x = (-1*(deg*4096)/(360))
+            deg = Azimut
+            x = int(-1*(deg*4096)/(360))
             if x>0 and x<=4096:
                 for y in range(x,0,-1):
                     if negative==1:
