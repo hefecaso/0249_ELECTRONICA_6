@@ -149,7 +149,8 @@ while True:
         #while True:
 
         while True:
-            location = ISS_Info.iss_current_loc()
+
+            '''location = ISS_Info.iss_current_loc()
             lat = location['iss_position']['latitude']
             lon = location['iss_position']['longitude']
             degrees_per_radian = 180.0 / math.pi
@@ -162,7 +163,7 @@ while True:
                 '2 25544  51.6455   4.6361 0004468 222.6641 220.6469 15.49954017344301'
             )
             home.date = datetime.utcnow()
-            iss_1.compute(home)
+            iss_1.compute(home)'''
             Angulo_Elevacion = int(iss_1.alt * degrees_per_radian)
             #Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
             #Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
