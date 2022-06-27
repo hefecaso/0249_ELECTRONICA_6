@@ -84,3 +84,12 @@ def tracker():
 t = threading.Thread(target=tracker())
 t.start()
 #pasoISS()
+
+
+def elevacion():
+    Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
+    return Angulo_Elevacion
+
+def azimut():
+    Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
+    return Azimut
