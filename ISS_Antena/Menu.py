@@ -82,7 +82,7 @@ Azimut =  int(iss_1.az * degrees_per_radian)
 
 
 def angulo_giro(angulo):
-    giro = (angulo)/18 +2
+    giro = int(angulo)/18 +2
     return giro
 
 ####################################################
