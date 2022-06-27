@@ -45,7 +45,7 @@ pwm = GPIO.PWM(servo, frequence)
 
 #C onvirtiendo ángulos a ciclos de trabajo
 def angulo_giro(angulo):
-    giro = float(angulo)/18 +2
+    giro = abs(float(angulo)/18 +2)
     return giro
 
 def movimiento():
