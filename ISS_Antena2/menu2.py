@@ -144,7 +144,7 @@ while True:
         #Limpiando terminal
         #os.system ("clear")
 
-        #system("lxterminal -e python3 isschris2.py")
+        system("lxterminal -e python3 isschris2.py")
 
         # Iniciando loop
         #while True:
