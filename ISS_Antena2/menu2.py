@@ -123,10 +123,12 @@ while True:
 
     elif opc == '3':
         print('====================================================================')
+
+        system("lxterminal -e python3 isschris.py")
+        
         while True:
             #exec(open("servo.py").read())
-            
-            system("lxterminal -e python3 isschris.py")
+
             system(f"python3 servo.py")
             exec(open("stepper.py").read())
             GPIO.cleanup()
