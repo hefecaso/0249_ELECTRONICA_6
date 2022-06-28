@@ -125,7 +125,7 @@ while True:
         print('====================================================================')
 
         system("lxterminal -e python3 isschris.py")
-        
+
         while True:
             #exec(open("servo.py").read())
 
@@ -145,9 +145,6 @@ while True:
         #os.system ("clear")
 
         system("lxterminal -e python3 isschris.py")
-
-        # Iniciando pwm en 0
-        pwm.start(0)
 
         # Iniciando loop
         #while True:
