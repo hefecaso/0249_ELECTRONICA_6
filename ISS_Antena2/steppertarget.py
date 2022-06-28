@@ -4,7 +4,14 @@ import math
 import ephem
 from datetime import datetime, timezone
 
+##########
+def diferencia(xi, xf):
+    y = xf-xi
+    return y
 
+xf = 0
+xi = 0
+##########
 
 out1 = 24
 out2 = 25
@@ -46,7 +53,14 @@ while True:
     Azimut =  int(iss_1.az * degrees_per_radian)
     print('Azimut:', Azimut)
     time.sleep(1)
-    deg = Azimut
+
+    ##############
+    xf = Azimut
+    print(diferencia(xi, xf))
+    xi = diferencia(xi, xf)
+    ##############
+    
+    deg = xi
     #print("ingrese un valor para rotar un angulo de 0 a 360")
 
     #deg = int(input())
