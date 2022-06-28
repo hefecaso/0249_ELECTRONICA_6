@@ -95,7 +95,7 @@ while True:
     elif opc == '4':
         print('====================================================================')
         #system("lxterminal -e python3 isschris.py")
-        system("gnome-terminal -- python isschris.py")
+        system("gnome-terminal -- python isschris2.py")
         #azimut = isc2.azimut()
         #elevacion = isc2.elevacion()
         cuenta = contador()
