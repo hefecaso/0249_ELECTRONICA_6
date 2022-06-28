@@ -60,7 +60,7 @@ while True:
     xi = xf
     ##############
 
-    deg = xi
+    deg = diferencia(xi, xf)
     #print("ingrese un valor para rotar un angulo de 0 a 360")
 
     #deg = int(input())
