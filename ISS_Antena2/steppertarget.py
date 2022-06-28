@@ -5,9 +5,9 @@ import ephem
 from datetime import datetime, timezone
 
 ##########
-def diferencia(xi, xf):
-    y = xf-xi
-    return y
+#def diferencia(xi, xf):
+    #y = xf-xi
+    #return y
 
 xf = 0
 xi = 0
@@ -56,11 +56,11 @@ while True:
 
     ##############
     xf = Azimut
-    print(diferencia(xi, xf))
+    y = xf-xi
     xi = xf
     ##############
 
-    deg = diferencia(xi, xf)
+    deg = y
     #print("ingrese un valor para rotar un angulo de 0 a 360")
 
     #deg = int(input())
