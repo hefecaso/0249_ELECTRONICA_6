@@ -141,20 +141,19 @@ while True:
     elif opc == '4':
         print('====================================================================')
 
-        #Limpiando terminal
-        #os.system ("clear")
-
+        # Abriendo mapa
         system("lxterminal -e python3 isschris2.py")
 
-        # Iniciando loop
-        #while True:
+        # Colocando servo y stepper en punto de partida, dirección Norte
+        system(f"python3 servo_origin.py")
+        exec(open("stepper_origin.py").read())
+        GPIO.cleanup()
+        time.sleep(5)
 
-        #exec(open("servo.py").read())
+        # Moviendo dirección a la ISS
         system(f"lxterminal -e python3 servotarget.py")
-        #time.sleep(1)
         system(f"lxterminal -e python3 steppertarget.py")
-        #GPIO.cleanup()
-        #time.sleep(1)
+
 
 
         '''while True:
