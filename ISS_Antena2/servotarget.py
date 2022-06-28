@@ -55,7 +55,8 @@ angulo = float(-1*Angulo_Elevacion)
 
 if 180 >= angulo >= 0:
     movimiento()
-    time.sleep(1.5)
+    #time.sleep(1.5)
+    time.sleep(1)
 
 else:
     print("\nÁngulo fuera de los parámetros permitidos. \n")
