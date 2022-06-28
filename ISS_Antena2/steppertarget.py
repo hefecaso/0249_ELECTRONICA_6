@@ -46,7 +46,7 @@ try:
         #Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
         Azimut =  int(iss_1.az * degrees_per_radian)
         print('Azimut:', Azimut)
-        time.sleep(5)
+        time.sleep(1)
         deg = Azimut
         #print("ingrese un valor para rotar un angulo de 0 a 360")
 
