@@ -57,9 +57,9 @@ while True:
     ##############
     xf = Azimut
     print(diferencia(xi, xf))
-    xi = diferencia(xi, xf)
+    xi = xf
     ##############
-    
+
     deg = xi
     #print("ingrese un valor para rotar un angulo de 0 a 360")
 
