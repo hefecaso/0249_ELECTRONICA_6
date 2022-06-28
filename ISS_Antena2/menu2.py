@@ -124,7 +124,7 @@ while True:
     elif opc == '3':
         print('====================================================================')
 
-        system("lxterminal -e python3 isschris.py")
+        system("lxterminal -e python3 isschris2.py")
 
         while True:
             #exec(open("servo.py").read())
@@ -144,7 +144,7 @@ while True:
         #Limpiando terminal
         #os.system ("clear")
 
-        system("lxterminal -e python3 isschris.py")
+        system("lxterminal -e python3 isschris2.py")
 
         # Iniciando loop
         #while True:
