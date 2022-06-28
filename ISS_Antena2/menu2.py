@@ -153,8 +153,8 @@ while True:
             #exec(open("servo.py").read())
             system(f"python3 servotarget.py")
             time.sleep(2)
-            exec(open("steppertarget.py").read())
-            GPIO.cleanup()
+            system(f"python3 steppertarget.py")
+            #GPIO.cleanup()
             time.sleep(2)
 
 
