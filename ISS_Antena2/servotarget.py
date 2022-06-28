@@ -32,7 +32,7 @@ def movimiento():
 pwm.start(0)
 
 #Limpiando terminal
-os.system ("clear")
+#os.system ("clear")
 
 # Iniciando loop
 #while True:
