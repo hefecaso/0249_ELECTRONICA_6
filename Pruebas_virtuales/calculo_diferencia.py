@@ -10,4 +10,4 @@ xi = 0
 while True:
     xf = float(input("\nIngrese un valor inicial: "))
     print(diferencia(xi, xf))
-    xi = diferencia(xi, xf)
+    xi = xf
