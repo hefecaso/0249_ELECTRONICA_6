@@ -92,8 +92,8 @@ while True:
     print("heading: {:.2f} degrees".format(posicion))
     time.sleep(0.2)'''
 
-    deg = posicion = get_heading(sensor)
-    
+    deg = get_heading(sensor)
+
     #deg = int(input())
     x = int(-1*(deg*4096)/(360))
     if x>0 and x<=4096:
