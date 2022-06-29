@@ -21,7 +21,8 @@ def menu():
     print("2. Azimut.")
     print("3. Azimut y elevación.")
     print("4. Target ISS.")
-    print("5. Salir.\n")
+    print("5. Orientar antena al norte.")
+    print("6. Salir.\n")
 
 
 while True:
@@ -82,6 +83,21 @@ while True:
         print('====================================================================')
 
     elif opc == '5':
+        print('====================================================================')
+
+        print("\nRegrsando a elevación 0°: \n")
+
+        system(f"python3 servo_origin.py")
+
+        print("\nRegrsando a azimut 0°: \n")
+
+        exec(open("stepper_origin.py").read())
+        GPIO.cleanup()
+        time.sleep(5)
+
+        print('====================================================================')
+
+    elif opc == '6':
         print('====================================================================')
         print("Saliendo del programa.")
         pwm.stop()
