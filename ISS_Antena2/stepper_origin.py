@@ -8,12 +8,12 @@ import adafruit_lsm303dlh_mag
 import busio
 import board
 
-#import lsm303dlh_mag_compass as brujula
+import lsm303dlh_mag_compass as brujula
 
 
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
-
+'''
 """ Display compass heading data five times per second """
 import time
 from math import atan2, degrees
@@ -35,7 +35,7 @@ def get_heading(_sensor):
     magnet_x, magnet_y, _ = _sensor.magnetic
     return vector_2_degrees(magnet_x, magnet_y)
 
-
+'''
 ##########
 #def diferencia(xi, xf):
     #y = xf-xi
@@ -92,7 +92,7 @@ while True:
     print("heading: {:.2f} degrees".format(posicion))
     time.sleep(0.2)'''
 
-    deg = get_heading(sensor)
+    deg = brujula.pos()
 
     #deg = int(input())
     x = int(-1*(deg*4096)/(360))
