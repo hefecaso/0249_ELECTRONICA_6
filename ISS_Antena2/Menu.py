@@ -100,6 +100,8 @@ while True:
 
         print("\nRegresando a elevación 0°: \n")
 
+        print("Moviendo servo a 0°")
+
         system(f"python3 servo_origin.py")
 
         print("\nRegresando a azimut 0°: \n")
@@ -107,9 +109,10 @@ while True:
         exec(open("stepper_origin.py").read())
         GPIO.cleanup()
         time.sleep(5)
+        print("\n")
 
         print("Saliendo del programa.")
-        pwm.stop()
+        #pwm.stop()
         GPIO.cleanup()
         print('====================================================================')
         break
