@@ -31,16 +31,21 @@ GPIO.setup(out2,GPIO.OUT)
 GPIO.setup(out3,GPIO.OUT)
 GPIO.setup(out4,GPIO.OUT)
 
+#################################
+#   Aquí va lo de la brujula    #
+#################################
+
+
+#############################################
+
 while True:
 
     '''
-    Aquí va lo de la brujula en lugar del azimut
-    xf = poición actual
-
-    deg = condición, dar 360°
-    detener cuando xf = 0° de la brujula
+    1. Tenemos que darle a deg la posición actual a la brujula
+    2. Tenemos que invertir las condicionales, si es (+) gira al contrario de lo normal
+        si es (-) giramos al sentido opuesto del programa normal.
     '''
-    
+
     deg = y
     #print("ingrese un valor para rotar un angulo de 0 a 360")
 
