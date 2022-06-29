@@ -27,7 +27,7 @@ negative=0
 y=0
 
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.board)
 GPIO.setwarnings(False) # Disable warnings
 GPIO.setup(out1,GPIO.OUT)
 GPIO.setup(out2,GPIO.OUT)
