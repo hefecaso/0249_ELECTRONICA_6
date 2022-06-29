@@ -81,10 +81,11 @@ def tracker():
             )
             home.date = datetime.utcnow()
             iss_1.compute(home)
-            Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
-            Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
-            print('Elevacion:', Angulo_Elevacion ,', Azimut:', Azimut)
-            time.sleep(5)
+            if 6.09958 < lat < 20.143828 and -109.107194 < lon < -76.671761: 
+                Angulo_Elevacion = '%4.1f' % (iss_1.alt * degrees_per_radian)
+                Azimut =  '%5.1f' % (iss_1.az * degrees_per_radian)
+                print('Elevacion:', Angulo_Elevacion ,', Azimut:', Azimut)
+                time.sleep(5)
 
         except Exception as e:
             print(str(e))
