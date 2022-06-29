@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
+#
+# SPDX-License-Identifier: Unlicense
+
+Adafruit-Blinka
+Adafruit_CircuitPython_ESP32SPI
+adafruit-circuitpython-esp-atcontrol
+adafruit_circuitpython_requests
