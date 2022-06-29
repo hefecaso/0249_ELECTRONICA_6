@@ -3,9 +3,9 @@ import time
 
 
 ##################
-#import sys
-#sys.path.append("/lsm303dlh_mag_compass")
-#from lsm303dlh_mag_compass import posicion
+import sys
+sys.path.append("/lsm303dlh_mag_compass")
+from lsm303dlh_mag_compass import posicion
 ##################
 
 out1 = 24 #18 #24
