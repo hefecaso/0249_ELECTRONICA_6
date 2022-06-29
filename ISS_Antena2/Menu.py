@@ -25,6 +25,7 @@ def menu():
     exec(open("stepper_origin.py").read())
     GPIO.cleanup()
     time.sleep(5)
+    print("\n")
 
     print('======================')
     print('Seleccione una opción')
