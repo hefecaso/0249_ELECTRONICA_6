@@ -4,9 +4,7 @@ import math
 import ephem
 from datetime import datetime, timezone
 from math import atan2, degrees
-import adafruit_lsm303dlh_mag
-import busio
-import board
+
 
 ###############3
 import sys
