@@ -145,6 +145,8 @@ while True:
         system("lxterminal -e python3 isschris2.py")
 
         # Colocando servo y stepper en punto de partida, dirección Norte
+        print("\nRegrsando al origen: \n")
+
         system(f"python3 servo_origin.py")
         exec(open("stepper_origin.py").read())
         GPIO.cleanup()
@@ -154,15 +156,6 @@ while True:
         system(f"lxterminal -e python3 servotarget.py")
         system(f"lxterminal -e python3 steppertarget.py")
 
-
-
-        '''while True:
-            #exec(open("servo.py").read())
-            system(f"python3 servotarget.py")
-            #time.sleep(1)
-            system(f"python3 steppertarget.py")
-            #GPIO.cleanup()
-            #time.sleep(1)'''
 
 
         print('====================================================================')
