@@ -11,9 +11,9 @@ from os import system
 
 ####################################################
 def menu():
-    print('\n#############################')
-    print('#    Control de la antena   #')
-    print('#############################')
+    print('\n        #############################')
+    print('        #    Control de la antena   #')
+    print('        #############################')
     exec(open("ascii.py").read())
 
     print("\nRegresando a elevación 0°: \n")
@@ -37,7 +37,8 @@ def menu():
     print("2. Azimut.")
     print("3. Azimut y elevación.")
     print("4. Target ISS.")
-    print("5. Salir.\n")
+    print("5. Ver mapa.")
+    print("6. Salir.\n")
 
 
 while True:
@@ -102,6 +103,14 @@ while True:
         print('====================================================================')
 
     elif opc == '5':
+        print('====================================================================')
+        print("\nAbriendo mapa.\n")
+        # Abriendo mapa
+        system("lxterminal -e python3 isschris2.py")
+
+        print('====================================================================')
+
+    elif opc == '6':
         print('====================================================================')
 
         print("\nRegresando a elevación 0°: \n")
