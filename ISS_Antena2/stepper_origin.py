@@ -3,15 +3,15 @@ import time
 
 
 ##################
-#import sys
-#sys.path.append("/lsm303dlh_mag_compass")
-#from lsm303dlh_mag_compass import posicion
+import sys
+sys.path.append("/lsm303dlh_mag_compass")
+from lsm303dlh_mag_compass import posicion
 ##################
 
-out1 = 18 #24
-out2 = 22 #25
-out3 = 24 #8
-out4 = 26 #7
+out1 = 24 #18 #24
+out2 = 25 #22 #25
+out3 = 8 #24 #8
+out4 = 7 #26 #7
 
 
 i=0
@@ -19,7 +19,7 @@ positive=0
 negative=0
 y=0
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(out1,GPIO.OUT)
 GPIO.setup(out2,GPIO.OUT)
 GPIO.setup(out3,GPIO.OUT)
@@ -32,7 +32,8 @@ try:
         GPIO.output(out3,GPIO.LOW)
         GPIO.output(out4,GPIO.LOW)
         #print("ingrese un valor para rotar un angulo de 0 a 360")
-        deg = posicion
+        print(f"Moviendo stepper {posicion}°")
+        deg = -1*posicion
         x = int(-1*(deg*4096)/(360))
         if x>0 and x<=4096:
             for y in range(x,0,-1):
