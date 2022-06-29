@@ -33,7 +33,7 @@ try:
         GPIO.output(out4,GPIO.LOW)
         #print("ingrese un valor para rotar un angulo de 0 a 360")
         print(f"Moviendo stepper {posicion}°")
-        deg = posicion
+        deg = -1*posicion
         x = int(-1*(deg*4096)/(360))
         if x>0 and x<=4096:
             for y in range(x,0,-1):
