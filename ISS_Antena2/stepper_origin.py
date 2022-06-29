@@ -64,9 +64,12 @@ while True:
     '''posicion = get_heading(sensor)
     print("heading: {:.2f} degrees".format(posicion))
     time.sleep(0.2)'''
-    deg = findall(brujula.posicion())
-    #print("ingrese un valor para rotar un angulo de 0 a 360")
 
+    posicion = findall(brujula.posicion())
+    s = [int(s) for s in str.split(posicion) if s.isdigit()]
+    #print("ingrese un valor para rotar un angulo de 0 a 360")
+    print("Moviendo:", s)
+    deg = s
     #deg = int(input())
     x = int(-1*(deg*4096)/(360))
     if x>0 and x<=4096:
