@@ -72,6 +72,8 @@ def tracker():
             cerco.left(90)
             cerco.dot(cerco.goto(float(-109.107194),float(6.09958)))
             cerco.left(90)
+            cerco.dot(cerco.goto(float(-107.324236),float(19.819178)))
+            cerco.left(90)
             degrees_per_radian = 180.0 / math.pi
             home = ephem.Observer()
             home.lon = '-90.51327'
