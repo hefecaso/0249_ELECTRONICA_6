@@ -26,6 +26,8 @@ def pos():
     posicion = get_heading(sensor)
     return posicion
 
+posicion = get_heading(sensor)
+
 '''while True:
     posicion = get_heading(sensor)
     #print("heading: {:.2f} degrees".format(posicion))
