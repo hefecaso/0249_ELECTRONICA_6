@@ -7,6 +7,8 @@ from math import atan2, degrees
 import adafruit_lsm303dlh_mag
 import busio
 import board
+
+import lsm303dlh_mag_compass as brujula
 ##########
 #def diferencia(xi, xf):
     #y = xf-xi
@@ -37,7 +39,7 @@ GPIO.setup(out4,GPIO.OUT)
 #################################
 #   Aquí va lo de la brujula    #
 #################################
-i2c = busio.I2C(SCL1,SDA1)  # uses board.SCL and board.SDA
+'''i2c = busio.I2C(SCL1,SDA1)  # uses board.SCL and board.SDA
 sensor = adafruit_lsm303dlh_mag.LSM303DLH_Mag(i2c)
 def vector_2_degrees(x, y):
     angle = degrees(atan2(y, x))
@@ -48,7 +50,7 @@ def vector_2_degrees(x, y):
 
 def get_heading(_sensor):
     magnet_x, magnet_y, _ = _sensor.magnetic
-    return vector_2_degrees(magnet_x, magnet_y)
+    return vector_2_degrees(magnet_x, magnet_y)'''
 
 #############################################
 
@@ -59,10 +61,10 @@ while True:
     2. Tenemos que invertir las condicionales, si es (+) gira al contrario de lo normal
         si es (-) giramos al sentido opuesto del programa normal.
     '''
-    posicion = get_heading(sensor)
+    '''posicion = get_heading(sensor)
     print("heading: {:.2f} degrees".format(posicion))
-    time.sleep(0.2)
-    deg = posicion
+    time.sleep(0.2)'''
+    deg = brujula.posicion()
     #print("ingrese un valor para rotar un angulo de 0 a 360")
 
     #deg = int(input())

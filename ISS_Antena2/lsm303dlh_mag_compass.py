@@ -22,10 +22,11 @@ def get_heading(_sensor):
     magnet_x, magnet_y, _ = _sensor.magnetic
     return vector_2_degrees(magnet_x, magnet_y)
 
+def pos():
+    posicion = get_heading(sensor)
+    return posicion
 
 while True:
     posicion = get_heading(sensor)
     print("heading: {:.2f} degrees".format(posicion))
     time.sleep(0.2)
-
-
