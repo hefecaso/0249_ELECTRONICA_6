@@ -3,14 +3,14 @@ import time
 import math
 import ephem
 from datetime import datetime, timezone
-from math import atan2, degrees
 
 
 ###############3
+'''
 import sys
 sys.path.append("/lsm303dlh_mag_compass")
 import lsm303dlh_mag_compass as brujula
-
+'''
 ##########
 #def diferencia(xi, xf):
     #y = xf-xi
@@ -41,35 +41,17 @@ GPIO.setup(out4,GPIO.OUT)
 #################################
 #   Aquí va lo de la brujula    #
 #################################
-'''i2c = busio.I2C(SCL1,SDA1)  # uses board.SCL and board.SDA
-sensor = adafruit_lsm303dlh_mag.LSM303DLH_Mag(i2c)
-def vector_2_degrees(x, y):
-    angle = degrees(atan2(y, x))
-    if angle < 0:
-        angle += 360
-    return angle
 
-
-def get_heading(_sensor):
-    magnet_x, magnet_y, _ = _sensor.magnetic
-    return vector_2_degrees(magnet_x, magnet_y)'''
 
 #############################################
 
 while True:
 
-    '''
-    1. Tenemos que darle a deg la posición actual a la brujula
-    2. Tenemos que invertir las condicionales, si es (+) gira al contrario de lo normal
-        si es (-) giramos al sentido opuesto del programa normal.
-    '''
-    '''posicion = get_heading(sensor)
-    print("heading: {:.2f} degrees".format(posicion))
-    time.sleep(0.2)'''
 
-    deg = brujula.posicion
 
-    #deg = int(input())
+    #deg = brujula.posicion
+
+    deg = int(input())
     x = int(-1*(deg*4096)/(360))
     if x>0 and x<=4096:
         for y in range(x,0,-1):
