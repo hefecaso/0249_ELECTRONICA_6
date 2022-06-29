@@ -8,10 +8,10 @@ sys.path.append("/lsm303dlh_mag_compass")
 from lsm303dlh_mag_compass import posicion
 ##################
 
-out1 = 18 #24
-out2 = 22 #25
-out3 = 24 #8
-out4 = 26 #7
+out1 = 24 #18 #24
+out2 = 25 #22 #25
+out3 = 8 #24 #8
+out4 = 7 #26 #7
 
 
 i=0
@@ -19,7 +19,7 @@ positive=0
 negative=0
 y=0
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(out1,GPIO.OUT)
 GPIO.setup(out2,GPIO.OUT)
 GPIO.setup(out3,GPIO.OUT)
