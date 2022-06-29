@@ -8,7 +8,7 @@ import adafruit_lsm303dlh_mag
 import busio
 import board
 
-import lsm303dlh_mag_compass as brujula
+#import lsm303dlh_mag_compass as brujula
 
 
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
