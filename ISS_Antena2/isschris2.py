@@ -28,7 +28,8 @@ iss.penup()
 gt = turtle.Turtle()
 #gt.shape("gt.gif")
 gt.penup()
-
+cerco = turtle.Turtle()
+cerco.penup()
 # Latitud y Logitud de Guatemala
 latitud=15.783471
 longitud=-90.230759
@@ -62,6 +63,11 @@ def tracker():
             iss.dot(iss.goto(float(lon),float(lat)))
             gt.pencolor("orange")
             gt.dot(gt.goto(float(longitud),float(latitud)))
+            cerco.pencolor("pink")
+            cerco.dot(cerco.goto(float(-92.47382),float(17.70356)))
+            cerco.dot(cerco.goto(float(-88.488965),float(18.131591)))
+            cerco.dot(cerco.goto(float(-88.08019),float(13.905043)))
+            cerco.dot(cerco.goto(float(-92.833648),float(14.006128)))
             degrees_per_radian = 180.0 / math.pi
             home = ephem.Observer()
             home.lon = '-90.51327'
