@@ -7,11 +7,13 @@ from os import system
 
 
 
+
+
 ####################################################
 def menu():
-    print('\n#############################')
-    print('#    Control de la antena   #')
-    print('#############################')
+    print('\n        #############################')
+    print('        #    Control de la antena   #')
+    print('        #############################')
     exec(open("ascii.py").read())
 
     print("\nRegresando a elevación 0°: \n")
@@ -35,7 +37,8 @@ def menu():
     print("2. Azimut.")
     print("3. Azimut y elevación.")
     print("4. Target ISS.")
-    print("5. Salir.\n")
+    print("5. Ver mapa.")
+    print("6. Salir.\n")
 
 
 while True:
@@ -74,6 +77,9 @@ while True:
         print('====================================================================')
 
     elif opc == '4':
+        import sys
+        sys.path.append("/isschris2")
+        from isschris2 import lat, lon
         print('====================================================================')
 
         # Abriendo mapa
@@ -82,20 +88,29 @@ while True:
         # Colocando servo y stepper en punto de partida, dirección Norte
         print("\nRegrsando al origen: \n")
 
-        system(f"python3 servo_origin.py")
-        exec(open("stepper_origin.py").read())
-        GPIO.cleanup()
-        time.sleep(5)
+        if 6.09958 < lat < 20.143828 and -109.107194 < lon < -76.671761:
 
+            system(f"python3 servo_origin.py")
+            exec(open("stepper_origin.py").read())
+            GPIO.cleanup()
+            time.sleep(5)
         # Moviendo dirección a la ISS
-        system(f"lxterminal -e python3 servotarget.py")
-        system(f"lxterminal -e python3 steppertarget.py")
+            system(f"lxterminal -e python3 servotarget.py")
+            system(f"lxterminal -e python3 steppertarget.py")
 
 
 
         print('====================================================================')
 
     elif opc == '5':
+        print('====================================================================')
+        print("\nAbriendo mapa.\n")
+        # Abriendo mapa
+        system("lxterminal -e python3 isschris2.py")
+
+        print('====================================================================')
+
+    elif opc == '6':
         print('====================================================================')
 
         print("\nRegresando a elevación 0°: \n")
