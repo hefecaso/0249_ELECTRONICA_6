@@ -64,10 +64,10 @@ def tracker():
             gt.pencolor("orange")
             gt.dot(gt.goto(float(longitud),float(latitud)))
             cerco.pencolor("pink")
-            cerco.dot(cerco.goto(float(-92.47382),float(17.70356)))
-            cerco.dot(cerco.goto(float(-88.488965),float(18.131591)))
-            cerco.dot(cerco.goto(float(-88.08019),float(13.905043)))
-            cerco.dot(cerco.goto(float(-92.833648),float(14.006128)))
+            (cerco.goto(float(-107.324236),float(19.819178)))
+            (cerco.goto(float(-76.671761),float(20.143828)))
+            (cerco.goto(float(-76.671761),float(10.808493)))
+            (cerco.goto(float(-109.107194),float(6.09958)))
             degrees_per_radian = 180.0 / math.pi
             home = ephem.Observer()
             home.lon = '-90.51327'
