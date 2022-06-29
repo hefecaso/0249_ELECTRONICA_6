@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from math import atan2, degrees
 import adafruit_lsm303dlh_mag
 import busio
+import board
 ##########
 #def diferencia(xi, xf):
     #y = xf-xi
@@ -26,7 +27,7 @@ negative=0
 y=0
 
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False) # Disable warnings
 GPIO.setup(out1,GPIO.OUT)
 GPIO.setup(out2,GPIO.OUT)
