@@ -64,7 +64,7 @@ while True:
     '''posicion = get_heading(sensor)
     print("heading: {:.2f} degrees".format(posicion))
     time.sleep(0.2)'''
-    deg = brujula.posicion()
+    deg = int(brujula.posicion())
     #print("ingrese un valor para rotar un angulo de 0 a 360")
 
     #deg = int(input())
