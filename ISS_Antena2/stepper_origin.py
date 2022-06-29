@@ -16,10 +16,10 @@ xf = 0
 xi = 0
 ##########
 
-out1 = 24
-out2 = 25
-out3 = 8
-out4 = 7
+out1 = 18 #24
+out2 = 22 #25
+out3 = 24 #8
+out4 = 26 #7
 
 i=0
 positive=0
