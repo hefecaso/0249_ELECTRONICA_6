@@ -63,7 +63,7 @@ def tracker():
             iss.dot(iss.goto(float(lon),float(lat)))
             gt.pencolor("orange")
             gt.dot(gt.goto(float(longitud),float(latitud)))
-            cerco.pencolor("pink")
+            cerco.pencolor("magenta")
             cerco.dot(cerco.goto(float(-107.324236),float(19.819178)))
             cerco.dot(cerco.goto(float(-76.671761),float(20.143828)))
             cerco.dot(cerco.goto(float(-76.671761),float(10.808493)))
