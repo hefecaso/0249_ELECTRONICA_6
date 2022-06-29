@@ -9,7 +9,7 @@ from os import system
 
 ####################################################
 def menu():
-    print('#############################')
+    print('\n#############################')
     print('#    Control de la antena   #')
     print('#############################')
     exec(open("ascii.py").read())

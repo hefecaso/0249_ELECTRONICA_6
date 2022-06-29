@@ -11,7 +11,7 @@ from os import system
 
 ####################################################
 def menu():
-    print('#############################')
+    print('\n#############################')
     print('#    Control de la antena   #')
     print('#############################')
     exec(open("ascii.py").read())
@@ -76,7 +76,7 @@ while True:
         print('====================================================================')
 
     elif opc == '4':
-        import sys 
+        import sys
         sys.path.append("/isschris2")
         from isschris2 import lat, lon
         print('====================================================================')
@@ -87,7 +87,7 @@ while True:
         # Colocando servo y stepper en punto de partida, dirección Norte
         print("\nRegrsando al origen: \n")
 
-        if 6.09958 < lat < 20.143828 and -109.107194 < lon < -76.671761: 
+        if 6.09958 < lat < 20.143828 and -109.107194 < lon < -76.671761:
 
             system(f"python3 servo_origin.py")
             exec(open("stepper_origin.py").read())
