@@ -18,16 +18,19 @@ def menu():
     print('#############################')
     exec(open("ascii.py").read())
 
-    print("\nRegrsando a elevación 0°: \n")
+    print("\nRegresando a elevación 0°: \n")
+
+    print("Moviendo servo a 0°")
 
     system(f"python3 servo_origin.py")
 
-    print("\nRegrsando a azimut 0°: \n")
+    print("\nRegresando a azimut 0°: \n")
 
     exec(open("stepper_origin.py").read())
     GPIO.cleanup()
     time.sleep(5)
-    
+    print("\n")
+
     print('======================')
     print('Seleccione una opción')
     print('======================\n')
@@ -100,18 +103,21 @@ while True:
     elif opc == '5':
         print('====================================================================')
 
-        print("\nRegrsando a elevación 0°: \n")
+        print("\nRegresando a elevación 0°: \n")
+
+        print("Moviendo servo a 0°")
 
         system(f"python3 servo_origin.py")
 
-        print("\nRegrsando a azimut 0°: \n")
+        print("\nRegresando a azimut 0°: \n")
 
         exec(open("stepper_origin.py").read())
         GPIO.cleanup()
         time.sleep(5)
+        print("\n")
 
         print("Saliendo del programa.")
-        pwm.stop()
+        #pwm.stop()
         GPIO.cleanup()
         print('====================================================================')
         break
