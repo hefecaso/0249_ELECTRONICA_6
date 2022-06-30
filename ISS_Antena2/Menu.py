@@ -50,15 +50,12 @@ while True:
 
     if opc == '1':
         print('====================================================================')
-        pwm.start(0)
-        exec(open("servo.py").read())
-        GPIO.cleanup()
+        system(f"lxterminal -e python3 servo.py")
         print('====================================================================')
 
     elif opc == '2':
         print('====================================================================')
-        exec(open("stepper.py").read())
-        GPIO.cleanup()
+        system(f"lxterminal -e python3 stepper.py")
         print('====================================================================')
 
     elif opc == '3':
