@@ -1,6 +1,15 @@
 import RPi.GPIO as GPIO
 import time
 
+##########
+#def diferencia(xi, xf):
+    #y = xf-xi
+    #return y
+
+xf = 0
+xi = 0
+##########
+
 out1 = 24
 out2 = 25
 out3 = 8
@@ -23,7 +32,17 @@ try:
         GPIO.output(out2,GPIO.LOW)
         GPIO.output(out3,GPIO.LOW)
         GPIO.output(out4,GPIO.LOW)
-        print("ingrese un valor para rotar un angulo de 0 a 360")
+
+        grados = int(input("ingrese un valor para rotar un angulo de 0 a 360: "))
+
+        ##############
+        xf = grados
+        y = xf-xi
+        xi = xf
+        ##############
+
+        deg = y
+
         deg = int(input())
         x = int(-1*(deg*4096)/(360))
         if x>0 and x<=4096:
