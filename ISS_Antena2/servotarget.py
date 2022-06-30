@@ -53,6 +53,8 @@ while True:
     Angulo_Elevacion = int(iss_1.alt * degrees_per_radian)
     print('Elevacion:' , Angulo_Elevacion)
     time.sleep(1)
+
+    #angulo = float(-1*Angulo_Elevacion)
     angulo = float(Angulo_Elevacion)
     #angulo = float(input("Ingrese un águlo: "))
 
