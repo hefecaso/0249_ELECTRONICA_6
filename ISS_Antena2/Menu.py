@@ -90,6 +90,11 @@ while True:
 
         print('====================================================================')
 
+        #Ejecuntando motores
+
+        system(f"lxterminal -e python3 servotarget.py")
+        system(f"lxterminal -e python3 steppertarget.py")
+
         # Abriendo mapa
         system("lxterminal -e python3 isschris2.py")
 
@@ -110,8 +115,8 @@ while True:
             #GPIO.cleanup()
             #time.sleep(5)
         # Moviendo dirección a la ISS
-        system(f"lxterminal -e python3 servotarget.py")
-        system(f"lxterminal -e python3 steppertarget.py")
+            system(f"lxterminal -e python3 servotarget.py")
+            system(f"lxterminal -e python3 steppertarget.py")
 
 
 
