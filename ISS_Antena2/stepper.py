@@ -43,7 +43,6 @@ try:
 
         deg = y
 
-        deg = int(input())
         x = int(-1*(deg*4096)/(360))
         if x>0 and x<=4096:
             for y in range(x,0,-1):
