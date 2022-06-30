@@ -142,6 +142,16 @@ while True:
         time.sleep(5)
         print("\n")
 
+        exec(open("stepper_origin.py").read())
+        GPIO.cleanup()
+        time.sleep(5)
+        print("\n")
+        
+        exec(open("stepper_origin.py").read())
+        GPIO.cleanup()
+        time.sleep(5)
+        print("\n")
+
         print("Saliendo del programa.")
         #pwm.stop()
         GPIO.cleanup()
