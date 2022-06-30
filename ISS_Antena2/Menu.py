@@ -177,7 +177,7 @@ while True:
 
 
         # Abriendo mapa
-        #system("lxterminal -e python3 isschris2.py")
+        system("lxterminal -e python3 isschris2.py")
 
         while True:
             if 6.09958 < iss.lat < 20.143828 and -109.107194 < iss.lon < -76.671761:
