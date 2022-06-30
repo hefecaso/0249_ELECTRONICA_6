@@ -79,9 +79,9 @@ while True:
         print('====================================================================')
 
     elif opc == '4':
-        import sys
-        sys.path.append("/isschris2")
-        from isschris2 import lat, lon
+        #import sys
+        #sys.path.append("/isschris2")
+        #from isschris2 import lat, lon
 
         #Punto 1 = valor
         #Punto 2 = valor
