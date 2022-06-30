@@ -33,18 +33,16 @@ def pasoISS():
     Pass_obj = json.loads(response_Pass.read())
     #print (Pass_obj)
     pass_list=[]
+
     for count,item in enumerate(Pass_obj["response"], start=0):
         pass_list.append(Pass_obj['response'][count]['risetime'])
 
 def tracker():
     pasoISS()
     while True:
-
-        try:
-
-            location = ISS_Info.iss_current_loc()
-            lat = location['iss_position']['latitude']
-            lon = location['iss_position']['longitude']
+        location = ISS_Info.iss_current_loc()
+        lat = location['iss_position']['latitude']
+        lon = location['iss_position']['longitude']
 
 
 ####################################################
