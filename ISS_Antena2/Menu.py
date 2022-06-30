@@ -16,7 +16,7 @@ def menu():
     print('        #############################')
     exec(open("ascii.py").read())
 
-    print("\nRegresando a elevación 0°: \n")
+'''    print("\nRegresando a elevación 0°: \n")
 
     print("Moviendo servo a 0°")
 
@@ -27,7 +27,7 @@ def menu():
     exec(open("stepper_origin.py").read())
     GPIO.cleanup()
     time.sleep(5)
-    print("\n")
+    print("\n")'''
 
     print('======================')
     print('Seleccione una opción')
@@ -92,7 +92,7 @@ while True:
         system("lxterminal -e python3 isschris2.py")
 
         #while True:
-            #if condicion 1 > latitud and condicion 1 > longitud: 
+            #if condicion 1 > latitud and condicion 1 > longitud:
                 #print("La ISS no se encuentra en rango.")
 
             #if condicion 1 < latitud and condicion 1 < longitud:
