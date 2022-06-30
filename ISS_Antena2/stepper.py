@@ -180,8 +180,8 @@ while True:
             i=i-1
     break
 
-except KeyboardInterrupt:
-    GPIO.cleanup()
+    except KeyboardInterrupt:
+        GPIO.cleanup()
 
 
 #Chekpoin menú, falta target ISS
