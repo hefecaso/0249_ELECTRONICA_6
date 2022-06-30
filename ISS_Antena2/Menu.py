@@ -61,10 +61,10 @@ while True:
     elif opc == '3':
         print('====================================================================')
 
-        system("lxterminal -e python3 isschris2.py")
-
         system(f"lxterminal -e python3 servo.py")
         system(f"lxterminal -e python3 stepper.py")
+
+        system("lxterminal -e python3 isschris2.py")
 
         print('====================================================================')
 
