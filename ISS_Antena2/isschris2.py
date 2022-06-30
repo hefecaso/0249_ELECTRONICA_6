@@ -29,7 +29,7 @@ gt = turtle.Turtle()
 #gt.shape("gt.gif")
 gt.penup()
 cerco = turtle.Turtle()
-cerco.penup()
+
 # Latitud y Logitud de Guatemala
 latitud=15.783471
 longitud=-90.230759
