@@ -25,7 +25,7 @@ GPIO.setup(out2,GPIO.OUT)
 GPIO.setup(out3,GPIO.OUT)
 GPIO.setup(out4,GPIO.OUT)
 
-#Incerteza de +/- 10
+#Incerteza de +/- 91
 regreso = (360 - posicion)+91
 
 try:
