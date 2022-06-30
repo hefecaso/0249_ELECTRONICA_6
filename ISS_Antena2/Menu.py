@@ -20,7 +20,7 @@ import ephem
 from datetime import datetime, timezone
 #import stepper
 #import servo
-
+'''
 screen = turtle.Screen()
 screen.title("ISS TRACKER")
 screen.setup(720,360)
@@ -37,6 +37,7 @@ gt = turtle.Turtle()
 gt.penup()
 cerco = turtle.Turtle()
 cerco.penup()
+'''
 # Latitud y Logitud de Guatemala
 latitud=15.783471
 longitud=-90.230759
@@ -99,8 +100,10 @@ time.sleep(5)
             print(str(e))
             break
 '''
+'''
 t = threading.Thread(target=tracker())
 t.start()
+'''
 #pasoISS()
 
 
