@@ -32,6 +32,7 @@ GPIO.setup(out3,GPIO.OUT)
 GPIO.setup(out4,GPIO.OUT)
 
 while True:
+    time.sleep(10)
     GPIO.setwarnings(False) # Disable warnings
     GPIO.output(out1,GPIO.LOW)
     GPIO.output(out2,GPIO.LOW)

@@ -38,6 +38,7 @@ pwm.start(0)
 #while True:
 
 while True:
+    time.sleep(10)
     degrees_per_radian = 180.0 / math.pi
     home = ephem.Observer()
     home.lon = '-90.51327'
@@ -52,7 +53,7 @@ while True:
     Angulo_Elevacion = int(iss_1.alt * degrees_per_radian)
     print('Elevacion:' , Angulo_Elevacion)
     time.sleep(1)
-    angulo = float(-1*Angulo_Elevacion)
+    angulo = float(Angulo_Elevacion)
     #angulo = float(input("Ingrese un águlo: "))
 
     if 180 >= angulo >= 0:
