@@ -25,7 +25,7 @@ GPIO.setup(out2,GPIO.OUT)
 GPIO.setup(out3,GPIO.OUT)
 GPIO.setup(out4,GPIO.OUT)
 
-regreso = 360-(360 - posicion)
+regreso = 360 - posicion
 
 try:
     while(1):
