@@ -38,6 +38,7 @@ pwm.start(0)
 #while True:
 
 while True:
+    time.sleep(10)
     degrees_per_radian = 180.0 / math.pi
     home = ephem.Observer()
     home.lon = '-90.51327'
