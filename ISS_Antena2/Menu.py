@@ -70,7 +70,10 @@ while True:
         print('====================================================================')
 
     elif opc == '4':
-
+        
+        import sys
+        sys.path.append("/isschris2")
+        from isschris2 import lat, lon
 
         print('====================================================================')
 
@@ -91,9 +94,6 @@ while True:
 
             else:
                 print("ISSS fuera de rango")
->>>>>>> 2387dbfd1a325447d5fd2b26d3bf0b3606516b87
-
-
 
         print('====================================================================')
 
