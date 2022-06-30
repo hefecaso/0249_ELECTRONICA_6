@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import os
 from os import system
+import sys
 #import stepper
 #import servo
 
@@ -16,6 +17,7 @@ def menu():
     print('        #############################')
     exec(open("ascii.py").read())
 
+    '''
     print("\nRegresando a elevación 0°: \n")
 
     print("Moviendo servo a 0°")
@@ -28,6 +30,7 @@ def menu():
     GPIO.cleanup()
     time.sleep(5)
     print("\n")
+    '''
 
     print('======================')
     print('Seleccione una opción')
@@ -48,57 +51,49 @@ while True:
 
     if opc == '1':
         print('====================================================================')
-        pwm.start(0)
-        exec(open("servo.py").read())
-        GPIO.cleanup()
+        system(f"lxterminal -e python3 servo.py")
         print('====================================================================')
 
     elif opc == '2':
         print('====================================================================')
-        exec(open("stepper.py").read())
-        GPIO.cleanup()
+        system(f"lxterminal -e python3 stepper.py")
         print('====================================================================')
 
     elif opc == '3':
         print('====================================================================')
 
+        system(f"lxterminal -e python3 servo.py")
+        system(f"lxterminal -e python3 stepper.py")
+
         system("lxterminal -e python3 isschris2.py")
 
-        while True:
-            #exec(open("servo.py").read())
-
-            system(f"python3 servo.py")
-            exec(open("stepper.py").read())
-            GPIO.cleanup()
-            opc2 = input("\nEjecutar otra instrucción? y/n: ")
-
-            if opc2 == "n":
-                break
         print('====================================================================')
 
     elif opc == '4':
+        
         import sys
         sys.path.append("/isschris2")
         from isschris2 import lat, lon
+
         print('====================================================================')
+
 
         # Abriendo mapa
         system("lxterminal -e python3 isschris2.py")
 
-        # Colocando servo y stepper en punto de partida, dirección Norte
-        print("\nRegrsando al origen: \n")
+        while True:
+            if 6.09958 < lat < 20.143828 and -109.107194 < lon < -76.671761:
 
-        if 6.09958 < lat < 20.143828 and -109.107194 < lon < -76.671761:
+                #system(f"python3 servo_origin.py")
+                #exec(open("stepper_origin.py").read())
+                #GPIO.cleanup()
+                #time.sleep(5)
+            # Moviendo dirección a la ISS
+                system(f"lxterminal -e python3 servotarget.py")
+                system(f"lxterminal -e python3 steppertarget.py")
 
-            system(f"python3 servo_origin.py")
-            exec(open("stepper_origin.py").read())
-            GPIO.cleanup()
-            time.sleep(5)
-        # Moviendo dirección a la ISS
-            system(f"lxterminal -e python3 servotarget.py")
-            system(f"lxterminal -e python3 steppertarget.py")
-
-
+            else:
+                print("ISSS fuera de rango")
 
         print('====================================================================')
 

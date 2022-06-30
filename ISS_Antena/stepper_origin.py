@@ -20,13 +20,14 @@ negative=0
 y=0
 
 GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False) # Disable warnings
 GPIO.setup(out1,GPIO.OUT)
 GPIO.setup(out2,GPIO.OUT)
 GPIO.setup(out3,GPIO.OUT)
 GPIO.setup(out4,GPIO.OUT)
 
-#Incerteza de +/- 91
-regreso = (360 - posicion)+91
+#Incerteza de +/- 30
+regreso = (360 - posicion)+30
 
 try:
     while(1):

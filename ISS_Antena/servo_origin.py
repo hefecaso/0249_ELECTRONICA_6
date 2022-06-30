@@ -46,6 +46,8 @@ if 180 >= angulo >= 0:
     movimiento()
     #time.sleep(1.5)
     time.sleep(1)
+    pwm.stop()
+    GPIO.cleanup()
 
 else:
     print("\nÁngulo fuera de los parámetros permitidos. \n")
