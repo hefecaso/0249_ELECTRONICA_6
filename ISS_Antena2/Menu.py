@@ -70,7 +70,7 @@ while True:
         print('====================================================================')
 
     elif opc == '4':
-        
+
         import sys
         sys.path.append("/isschris2")
         from isschris2 import lat, lon
@@ -91,9 +91,11 @@ while True:
             # Moviendo dirección a la ISS
                 system(f"lxterminal -e python3 servotarget.py")
                 system(f"lxterminal -e python3 steppertarget.py")
+                continue
 
             else:
                 print("ISSS fuera de rango")
+                time.sleep(5)
 
         print('====================================================================')
 
