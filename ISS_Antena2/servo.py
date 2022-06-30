@@ -39,8 +39,8 @@ while True:
     else:
         print("\nÁngulo fuera de los parámetros permitidos. \n")
 
-    pwm.stop()
-    GPIO.cleanup()
+pwm.stop()
+GPIO.cleanup()
 
 
 
