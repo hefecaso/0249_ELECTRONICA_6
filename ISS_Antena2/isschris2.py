@@ -72,7 +72,6 @@ def tracker():
             cerco.forward(4.708913)
             cerco.left(90)
             cerco.forward(1.782958)
-            cerco.left(90)
             degrees_per_radian = 180.0 / math.pi
             home = ephem.Observer()
             home.lon = '-90.51327'
