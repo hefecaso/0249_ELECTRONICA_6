@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 #import stepper
 #import servo
 
-creen = turtle.Screen()
+screen = turtle.Screen()
 screen.title("ISS TRACKER")
 screen.setup(720,360)
 screen.setworldcoordinates(-180,-90,180,90)
