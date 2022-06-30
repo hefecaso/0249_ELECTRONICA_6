@@ -66,16 +66,9 @@ while True:
 
         system("lxterminal -e python3 isschris2.py")
 
-        while True:
-            #exec(open("servo.py").read())
+        system(f"lxterminal -e python3 servo.py")
+        system(f"lxterminal -e python3 stepper.py")
 
-            system(f"python3 servo.py")
-            exec(open("stepper.py").read())
-            GPIO.cleanup()
-            opc2 = input("\nEjecutar otra instrucción? y/n: ")
-
-            if opc2 == "n":
-                break
         print('====================================================================')
 
     elif opc == '4':
