@@ -80,7 +80,15 @@ while True:
         import sys
         sys.path.append("/isschris2")
         from isschris2 import lat, lon
+
+        #Punto 1 = valor
+        #Punto 2 = valor
+        #Punto 3 = valor
+        #Punto 4 = valor
+
         print('====================================================================')
+
+        #if condicion 1 and condicion 2 
 
         # Abriendo mapa
         system("lxterminal -e python3 isschris2.py")
