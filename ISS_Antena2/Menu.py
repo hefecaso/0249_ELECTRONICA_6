@@ -102,17 +102,16 @@ while True:
                 #Ejecutar todo lo que hay aquí abajo
 
         # Colocando servo y stepper en punto de partida, dirección Norte
-        print("\nRegrsando al origen: \n")
 
-        if 6.09958 < lat < 20.143828 and -109.107194 < lon < -76.671761:
+        #if 6.09958 < lat < 20.143828 and -109.107194 < lon < -76.671761:
 
-            system(f"python3 servo_origin.py")
-            exec(open("stepper_origin.py").read())
-            GPIO.cleanup()
-            time.sleep(5)
+            #system(f"python3 servo_origin.py")
+            #exec(open("stepper_origin.py").read())
+            #GPIO.cleanup()
+            #time.sleep(5)
         # Moviendo dirección a la ISS
-            system(f"lxterminal -e python3 servotarget.py")
-            system(f"lxterminal -e python3 steppertarget.py")
+        system(f"lxterminal -e python3 servotarget.py")
+        system(f"lxterminal -e python3 steppertarget.py")
 
 
 
