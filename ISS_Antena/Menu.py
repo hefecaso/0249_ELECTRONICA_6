@@ -70,7 +70,7 @@ while True:
         print('====================================================================')
 
     elif opc == '4':
-        
+
         import sys
         sys.path.append("/isschris2")
         from isschris2 import lat, lon
