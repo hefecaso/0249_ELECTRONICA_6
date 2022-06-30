@@ -41,7 +41,10 @@ try:
         xi = xf
         ##############
 
+
         deg = y
+
+        print(f"Moviendo: {deg}°")
 
         x = int(-1*(deg*4096)/(360))
         if x>0 and x<=4096:
