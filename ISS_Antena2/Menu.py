@@ -7,7 +7,10 @@ import sys
 #import servo
 
 
-
+import sys
+sys.path.append("/isschris2")
+from isschris2 import lat
+from iso8601 import lon
 
 
 ####################################################
@@ -71,9 +74,6 @@ while True:
 
     elif opc == '4':
 
-        import sys
-        sys.path.append("/isschris2")
-        from isschris2 import lat, lon
 
         print('====================================================================')
 
