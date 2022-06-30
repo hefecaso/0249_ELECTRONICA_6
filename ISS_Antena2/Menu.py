@@ -88,10 +88,16 @@ while True:
 
         print('====================================================================')
 
-        #if condicion 1 and condicion 2 
-
         # Abriendo mapa
         system("lxterminal -e python3 isschris2.py")
+
+        #while True:
+            #if condicion 1 > latitud and condicion 1 > longitud: 
+                #print("La ISS no se encuentra en rango.")
+
+            #if condicion 1 < latitud and condicion 1 < longitud:
+                #print("La ISS está en rango")
+                #Ejecutar todo lo que hay aquí abajo
 
         # Colocando servo y stepper en punto de partida, dirección Norte
         print("\nRegrsando al origen: \n")
