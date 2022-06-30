@@ -7,11 +7,6 @@ import sys
 #import servo
 
 
-import sys
-sys.path.append("/isschris2")
-from isschris2 import lat
-from iso8601 import lon
-
 
 ####################################################
 def menu():
@@ -74,6 +69,8 @@ while True:
 
     elif opc == '4':
 
+        sys.path.append("isschris2")
+        import isschris2 as iss
 
         print('====================================================================')
 
@@ -82,7 +79,7 @@ while True:
         system("lxterminal -e python3 isschris2.py")
 
         while True:
-            if 6.09958 < lat < 20.143828 and -109.107194 < lon < -76.671761:
+            if 6.09958 < iss.lat < 20.143828 and -109.107194 < iss.lon < -76.671761:
 
                 #system(f"python3 servo_origin.py")
                 #exec(open("stepper_origin.py").read())
