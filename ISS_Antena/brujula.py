@@ -51,4 +51,4 @@ while True:
     time.sleep(0.5)
     turtle.home()
     time.sleep(0.5)
-    pencolor("black")
+    pencolor("cyan")
