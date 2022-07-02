@@ -67,6 +67,8 @@ while True:
 
         system("lxterminal -e python3 isschris2.py")
 
+        system("lxterminal -e python3 brujula.py")
+
         print('====================================================================')
 
     elif opc == '4':
@@ -88,6 +90,8 @@ while True:
             # Moviendo dirección a la ISS
         system(f"lxterminal -e python3 servotarget.py")
         system(f"lxterminal -e python3 steppertarget.py")
+
+        system("lxterminal -e python3 brujula.py")
 
             #else:
                 #print("ISSS fuera de rango")
